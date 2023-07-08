@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_employee_manager/core/utils/colors/app_colors.dart';
-import 'package:my_employee_manager/core/utils/constants/app_constants.dart';
+import 'package:my_employee_manager/core/config/colors/app_colors.dart';
+import 'package:my_employee_manager/core/config/constants/app_constants.dart';
 
 abstract class AppTheme {
   static final defaultThemeData = ThemeData(

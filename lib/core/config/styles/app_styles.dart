@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart' show TextStyle;
-import 'package:my_employee_manager/core/utils/colors/app_colors.dart';
+import 'package:my_employee_manager/core/config/colors/app_colors.dart';
 
 enum AppStyles {
   regular22(TextStyle(

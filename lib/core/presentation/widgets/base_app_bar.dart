@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:my_employee_manager/core/utils/constants/app_constants.dart';
-import 'package:my_employee_manager/core/utils/styles/app_styles.dart';
+import 'package:my_employee_manager/core/config/constants/app_constants.dart';
+import 'package:my_employee_manager/core/config/styles/app_styles.dart';
 
 import 'base_app_icon_button.dart';
 

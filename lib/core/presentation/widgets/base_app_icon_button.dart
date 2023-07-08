@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/constants/app_constants.dart';
+import '../../config/constants/app_constants.dart';
 
 class BaseAppIconButton extends StatelessWidget {
   final VoidCallback? onPressed;

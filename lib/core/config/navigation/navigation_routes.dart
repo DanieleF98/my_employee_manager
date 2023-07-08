@@ -3,7 +3,7 @@ import 'package:my_employee_manager/features/employee_detail/presentation/employ
 import 'package:my_employee_manager/features/employee_shifts_calendar/presentation/employee_shifts_calendar_page.dart';
 import 'package:my_employee_manager/features/login/presentation/login_page.dart';
 
-import '../../../features/home_page/presentation/home_page.dart';
+import '../../../di/app_multi_bloc_provider.dart';
 import '../../../features/notification/presentation/notifications_page.dart';
 import 'navigation_pages.dart';
 
@@ -14,8 +14,8 @@ abstract class NavigationRoutes {
 
   static final List<GoRoute> _routes = [
     GoRoute(
-      path: NavigationPages.homePage.value,
-      builder: (context, state) => const HomePage(),
+      path: NavigationPages.mainContainer.value,
+      builder: (context, state) => const AppMultiBlocProvider(),
       routes: [
         GoRoute(
           path: NavigationPages.loginPage.value,

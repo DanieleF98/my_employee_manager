@@ -1,9 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:my_employee_manager/core/utils/navigation/navigation_routes.dart';
+import 'package:my_employee_manager/core/config/navigation/navigation_routes.dart';
 
-import 'core/utils/theme/app_theme.dart';
+import 'core/config/theme/app_theme.dart';
 import 'firebase_options.dart';
 
 void main() async {

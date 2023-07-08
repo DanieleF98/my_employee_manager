@@ -1,5 +1,5 @@
 enum NavigationPages {
-  homePage(value: '/'),
+  mainContainer(value: '/'),
   loginPage(value: 'loginPage'),
   employeeDetailPage(value: 'employeeDetailPage'),
   employeeShiftsCalendarPage(value: 'employeeShiftsCalendarPage'),
