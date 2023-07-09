@@ -5,6 +5,14 @@ enum AppStyles {
   regular22(TextStyle(
     fontSize: 22,
     color: AppColors.defaultBlack,
+  )),
+  regular30(TextStyle(
+    fontSize: 30,
+    color: AppColors.defaultBlack,
+  )),
+  regular12(TextStyle(
+    fontSize: 12,
+    color: AppColors.defaultBlack,
   ));
 
   final TextStyle style;

@@ -16,37 +16,43 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$GenericFailureEntity {
-  int? get code => throw _privateConstructorUsedError;
+  Object? get code => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int? code, String? message) defaultFailure,
+    required TResult Function(String? code, String? message) specificFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int? code, String? message)? defaultFailure,
+    TResult? Function(String? code, String? message)? specificFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int? code, String? message)? defaultFailure,
+    TResult Function(String? code, String? message)? specificFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(DefaultFailureEntity value) defaultFailure,
+    required TResult Function(SpecificFailureEntity value) specificFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(DefaultFailureEntity value)? defaultFailure,
+    TResult? Function(SpecificFailureEntity value)? specificFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DefaultFailureEntity value)? defaultFailure,
+    TResult Function(SpecificFailureEntity value)? specificFailure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -62,7 +68,7 @@ abstract class $GenericFailureEntityCopyWith<$Res> {
           $Res Function(GenericFailureEntity) then) =
       _$GenericFailureEntityCopyWithImpl<$Res, GenericFailureEntity>;
   @useResult
-  $Res call({int? code, String? message});
+  $Res call({String? message});
 }
 
 /// @nodoc
@@ -79,14 +85,9 @@ class _$GenericFailureEntityCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? code = freezed,
     Object? message = freezed,
   }) {
     return _then(_value.copyWith(
-      code: freezed == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as int?,
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -171,6 +172,7 @@ class _$DefaultFailureEntity implements DefaultFailureEntity {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(int? code, String? message) defaultFailure,
+    required TResult Function(String? code, String? message) specificFailure,
   }) {
     return defaultFailure(code, message);
   }
@@ -179,6 +181,7 @@ class _$DefaultFailureEntity implements DefaultFailureEntity {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(int? code, String? message)? defaultFailure,
+    TResult? Function(String? code, String? message)? specificFailure,
   }) {
     return defaultFailure?.call(code, message);
   }
@@ -187,6 +190,7 @@ class _$DefaultFailureEntity implements DefaultFailureEntity {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int? code, String? message)? defaultFailure,
+    TResult Function(String? code, String? message)? specificFailure,
     required TResult orElse(),
   }) {
     if (defaultFailure != null) {
@@ -199,6 +203,7 @@ class _$DefaultFailureEntity implements DefaultFailureEntity {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(DefaultFailureEntity value) defaultFailure,
+    required TResult Function(SpecificFailureEntity value) specificFailure,
   }) {
     return defaultFailure(this);
   }
@@ -207,6 +212,7 @@ class _$DefaultFailureEntity implements DefaultFailureEntity {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(DefaultFailureEntity value)? defaultFailure,
+    TResult? Function(SpecificFailureEntity value)? specificFailure,
   }) {
     return defaultFailure?.call(this);
   }
@@ -215,6 +221,7 @@ class _$DefaultFailureEntity implements DefaultFailureEntity {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DefaultFailureEntity value)? defaultFailure,
+    TResult Function(SpecificFailureEntity value)? specificFailure,
     required TResult orElse(),
   }) {
     if (defaultFailure != null) {
@@ -235,5 +242,154 @@ abstract class DefaultFailureEntity implements GenericFailureEntity {
   @override
   @JsonKey(ignore: true)
   _$$DefaultFailureEntityCopyWith<_$DefaultFailureEntity> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SpecificFailureEntityCopyWith<$Res>
+    implements $GenericFailureEntityCopyWith<$Res> {
+  factory _$$SpecificFailureEntityCopyWith(_$SpecificFailureEntity value,
+          $Res Function(_$SpecificFailureEntity) then) =
+      __$$SpecificFailureEntityCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? code, String? message});
+}
+
+/// @nodoc
+class __$$SpecificFailureEntityCopyWithImpl<$Res>
+    extends _$GenericFailureEntityCopyWithImpl<$Res, _$SpecificFailureEntity>
+    implements _$$SpecificFailureEntityCopyWith<$Res> {
+  __$$SpecificFailureEntityCopyWithImpl(_$SpecificFailureEntity _value,
+      $Res Function(_$SpecificFailureEntity) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? code = freezed,
+    Object? message = freezed,
+  }) {
+    return _then(_$SpecificFailureEntity(
+      code: freezed == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String?,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SpecificFailureEntity implements SpecificFailureEntity {
+  _$SpecificFailureEntity({this.code, this.message});
+
+  @override
+  final String? code;
+  @override
+  final String? message;
+
+  @override
+  String toString() {
+    return 'GenericFailureEntity.specificFailure(code: $code, message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SpecificFailureEntity &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, code, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SpecificFailureEntityCopyWith<_$SpecificFailureEntity> get copyWith =>
+      __$$SpecificFailureEntityCopyWithImpl<_$SpecificFailureEntity>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int? code, String? message) defaultFailure,
+    required TResult Function(String? code, String? message) specificFailure,
+  }) {
+    return specificFailure(code, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int? code, String? message)? defaultFailure,
+    TResult? Function(String? code, String? message)? specificFailure,
+  }) {
+    return specificFailure?.call(code, message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int? code, String? message)? defaultFailure,
+    TResult Function(String? code, String? message)? specificFailure,
+    required TResult orElse(),
+  }) {
+    if (specificFailure != null) {
+      return specificFailure(code, message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(DefaultFailureEntity value) defaultFailure,
+    required TResult Function(SpecificFailureEntity value) specificFailure,
+  }) {
+    return specificFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(DefaultFailureEntity value)? defaultFailure,
+    TResult? Function(SpecificFailureEntity value)? specificFailure,
+  }) {
+    return specificFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DefaultFailureEntity value)? defaultFailure,
+    TResult Function(SpecificFailureEntity value)? specificFailure,
+    required TResult orElse(),
+  }) {
+    if (specificFailure != null) {
+      return specificFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SpecificFailureEntity implements GenericFailureEntity {
+  factory SpecificFailureEntity({final String? code, final String? message}) =
+      _$SpecificFailureEntity;
+
+  @override
+  String? get code;
+  @override
+  String? get message;
+  @override
+  @JsonKey(ignore: true)
+  _$$SpecificFailureEntityCopyWith<_$SpecificFailureEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }

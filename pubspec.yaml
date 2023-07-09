@@ -22,6 +22,7 @@ dependencies:
   cloud_firestore: ^4.8.2
   freezed_annotation: ^2.2.0
   json_annotation: ^4.8.1
+  firebase_auth: ^4.6.3
 
 
 

@@ -1,3 +1,10 @@
 {
-    "myEmployeeManager": "My Employee Manager"
+    "myEmployeeManager": "My Employee Manager",
+    "login": "Login",
+    "username": "Username",
+    "password": "Password",
+    "home": "Home",
+    "calendar": "Calendar",
+    "notifications": "Notifications",
+    "somethingWentWrong": "Something went wrong"
 }

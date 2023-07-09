@@ -5,11 +5,13 @@ import '../../config/constants/app_constants.dart';
 class BaseAppIconButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final IconData iconData;
+  final double? iconSize;
   final Color? iconColor;
   const BaseAppIconButton({
     this.onPressed,
     required this.iconData,
     this.iconColor,
+    this.iconSize,
     super.key,
   });
 
@@ -21,6 +23,7 @@ class BaseAppIconButton extends StatelessWidget {
         onPressed: onPressed,
         icon: Icon(
           iconData,
+          size: iconSize,
           color: iconColor,
         ),
       ),

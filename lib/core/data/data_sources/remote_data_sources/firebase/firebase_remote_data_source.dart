@@ -9,8 +9,12 @@ abstract class FirebaseRemoteDataSource implements RemoteDataSource {
       Either<GenericFailureEntity,
           List<QueryDocumentSnapshot<Map<String, dynamic>>>>> getCollection(
       {required String collectionName});
+
   Future<Either<GenericFailureEntity, bool>> addElementToCollection({
     required String collectionName,
     required Map<String, dynamic> object,
   });
+
+  Future<Either<GenericFailureEntity, bool>> login(
+      (String, String) emailAndPassword);
 }

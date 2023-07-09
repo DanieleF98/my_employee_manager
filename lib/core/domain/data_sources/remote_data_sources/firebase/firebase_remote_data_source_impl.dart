@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../../../data/data_sources/remote_data_sources/firebase/firebase_remote_data_source.dart';
 import '../../../../data/request/base_request.dart';
@@ -52,6 +53,28 @@ class FirebaseRemoteDataSourceImpl implements FirebaseRemoteDataSource {
       await db.collection(collectionName).add(object);
       return const Right(true);
     } catch (e) {
+      return Left(GenericFailureEntity.defaultFailure());
+    }
+  }
+
+  @override
+  Future<Either<GenericFailureEntity, bool>> login(
+      (String, String) emailAndPassword) async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailAndPassword.$1,
+        password: emailAndPassword.$2,
+      );
+
+      return const Right(true);
+    } on FirebaseAuthException catch (firebaseException) {
+      return Left(
+        GenericFailureEntity.specificFailure(
+          message: firebaseException.message,
+          code: firebaseException.code,
+        ),
+      );
+    } on Exception {
       return Left(GenericFailureEntity.defaultFailure());
     }
   }

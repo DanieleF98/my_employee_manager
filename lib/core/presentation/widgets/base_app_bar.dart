@@ -6,9 +6,13 @@ import 'package:my_employee_manager/core/config/styles/app_styles.dart';
 import 'base_app_icon_button.dart';
 
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final bool hasToShowTitle;
   final bool hasToShowSearch;
+  final bool hasToShowProfile;
   const BaseAppBar({
+    required this.hasToShowTitle,
     required this.hasToShowSearch,
+    required this.hasToShowProfile,
     super.key,
   });
 
@@ -16,10 +20,12 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       titleSpacing: AppConstants.defaultPadding,
-      title: Text(
-        AppLocalizations.of(context).myEmployeeManager,
-        style: AppStyles.regular22.style,
-      ),
+      title: hasToShowTitle
+          ? Text(
+              AppLocalizations.of(context).myEmployeeManager,
+              style: AppStyles.regular22.style,
+            )
+          : null,
       automaticallyImplyLeading: false,
       actions: [
         if (hasToShowSearch)
@@ -28,17 +34,20 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
               right: AppConstants.defaultPadding / 2,
             ),
             child: BaseAppIconButton(
+              iconSize: AppConstants.defaultIconSize,
               iconData: Icons.search,
             ),
           ),
-        const Padding(
-          padding: EdgeInsets.only(
-            right: AppConstants.defaultPadding,
+        if (hasToShowProfile)
+          const Padding(
+            padding: EdgeInsets.only(
+              right: AppConstants.defaultPadding,
+            ),
+            child: BaseAppIconButton(
+              iconSize: AppConstants.defaultIconSize,
+              iconData: Icons.account_circle,
+            ),
           ),
-          child: BaseAppIconButton(
-            iconData: Icons.account_circle,
-          ),
-        ),
       ],
     );
   }

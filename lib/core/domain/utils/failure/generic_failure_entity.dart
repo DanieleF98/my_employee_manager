@@ -8,4 +8,8 @@ class GenericFailureEntity with _$GenericFailureEntity {
     int? code,
     String? message,
   }) = DefaultFailureEntity;
+  factory GenericFailureEntity.specificFailure({
+    String? code,
+    String? message,
+  }) = SpecificFailureEntity;
 }
