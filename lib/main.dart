@@ -4,8 +4,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_employee_manager/core/config/navigation/navigation_routes.dart';
 import 'package:my_employee_manager/di/app_injector.dart' as di;
 
+import 'config/firebase_options.dart';
 import 'core/config/theme/app_theme.dart';
-import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
