@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_employee_manager/core/config/utils/extensions/int_extensions.dart';
 import 'package:my_employee_manager/core/presentation/widgets/base_widget.dart';
+import 'package:my_employee_manager/di/app_injector.dart';
+import 'package:my_employee_manager/features/home_page/presentation/cubit/home_page_cubit.dart';
 
 class MainContainerWithBottomNavigationWidget extends StatelessWidget {
   final StatefulNavigationShell navigationShell;
@@ -14,34 +17,41 @@ class MainContainerWithBottomNavigationWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context);
-    return BaseWidget(
-      hasToShowProfile: true,
-      hasToShowSearch: navigationShell.currentIndex.isFirst,
-      bottomNavigationBar: BottomNavigationBar(
-          useLegacyColorScheme: false,
-          currentIndex: navigationShell.currentIndex,
-          onTap: _onTap,
-          items: [
-            BottomNavigationBarItem(
-              icon: const Icon(
-                Icons.home,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<HomePageCubit>(
+          create: (context) => appInjector.get<HomePageCubit>(),
+        ),
+      ],
+      child: BaseWidget(
+        hasToShowProfile: true,
+        hasToShowSearch: navigationShell.currentIndex.isFirst,
+        bottomNavigationBar: BottomNavigationBar(
+            useLegacyColorScheme: false,
+            currentIndex: navigationShell.currentIndex,
+            onTap: _onTap,
+            items: [
+              BottomNavigationBarItem(
+                icon: const Icon(
+                  Icons.home,
+                ),
+                label: localizations.home,
               ),
-              label: localizations.home,
-            ),
-            BottomNavigationBarItem(
-              icon: const Icon(
-                Icons.calendar_today,
+              BottomNavigationBarItem(
+                icon: const Icon(
+                  Icons.calendar_today,
+                ),
+                label: localizations.calendar,
               ),
-              label: localizations.calendar,
-            ),
-            BottomNavigationBarItem(
-              icon: const Icon(
-                Icons.notifications,
+              BottomNavigationBarItem(
+                icon: const Icon(
+                  Icons.notifications,
+                ),
+                label: localizations.notifications,
               ),
-              label: localizations.notifications,
-            ),
-          ]),
-      child: navigationShell,
+            ]),
+        child: navigationShell,
+      ),
     );
   }
 
