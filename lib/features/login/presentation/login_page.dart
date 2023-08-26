@@ -46,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
           AppDialogsUtils.dismissSnackbar(context: context);
           AppDialogsUtils.showFullScreenLoader(context: context);
         }, error: (message) {
-          Navigator.pop(context);
+          context.pop();
           AppDialogsUtils.showSnackbar(
             context: context,
             message: message,
