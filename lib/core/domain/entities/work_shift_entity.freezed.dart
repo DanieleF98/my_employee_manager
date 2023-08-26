@@ -16,8 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$WorkShiftEntity {
-  int get startTime => throw _privateConstructorUsedError;
-  int get endTime => throw _privateConstructorUsedError;
+  DateTime get startTime => throw _privateConstructorUsedError;
+  DateTime get endTime => throw _privateConstructorUsedError;
   int get totalWorkHour => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -31,7 +31,7 @@ abstract class $WorkShiftEntityCopyWith<$Res> {
           WorkShiftEntity value, $Res Function(WorkShiftEntity) then) =
       _$WorkShiftEntityCopyWithImpl<$Res, WorkShiftEntity>;
   @useResult
-  $Res call({int startTime, int endTime, int totalWorkHour});
+  $Res call({DateTime startTime, DateTime endTime, int totalWorkHour});
 }
 
 /// @nodoc
@@ -55,11 +55,11 @@ class _$WorkShiftEntityCopyWithImpl<$Res, $Val extends WorkShiftEntity>
       startTime: null == startTime
           ? _value.startTime
           : startTime // ignore: cast_nullable_to_non_nullable
-              as int,
+              as DateTime,
       endTime: null == endTime
           ? _value.endTime
           : endTime // ignore: cast_nullable_to_non_nullable
-              as int,
+              as DateTime,
       totalWorkHour: null == totalWorkHour
           ? _value.totalWorkHour
           : totalWorkHour // ignore: cast_nullable_to_non_nullable
@@ -76,7 +76,7 @@ abstract class _$$_WorkShiftEntityCopyWith<$Res>
       __$$_WorkShiftEntityCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int startTime, int endTime, int totalWorkHour});
+  $Res call({DateTime startTime, DateTime endTime, int totalWorkHour});
 }
 
 /// @nodoc
@@ -98,11 +98,11 @@ class __$$_WorkShiftEntityCopyWithImpl<$Res>
       startTime: null == startTime
           ? _value.startTime
           : startTime // ignore: cast_nullable_to_non_nullable
-              as int,
+              as DateTime,
       endTime: null == endTime
           ? _value.endTime
           : endTime // ignore: cast_nullable_to_non_nullable
-              as int,
+              as DateTime,
       totalWorkHour: null == totalWorkHour
           ? _value.totalWorkHour
           : totalWorkHour // ignore: cast_nullable_to_non_nullable
@@ -115,14 +115,12 @@ class __$$_WorkShiftEntityCopyWithImpl<$Res>
 
 class _$_WorkShiftEntity implements _WorkShiftEntity {
   const _$_WorkShiftEntity(
-      {this.startTime = 0, this.endTime = 0, this.totalWorkHour = 0});
+      {required this.startTime, required this.endTime, this.totalWorkHour = 0});
 
   @override
-  @JsonKey()
-  final int startTime;
+  final DateTime startTime;
   @override
-  @JsonKey()
-  final int endTime;
+  final DateTime endTime;
   @override
   @JsonKey()
   final int totalWorkHour;
@@ -157,14 +155,14 @@ class _$_WorkShiftEntity implements _WorkShiftEntity {
 
 abstract class _WorkShiftEntity implements WorkShiftEntity {
   const factory _WorkShiftEntity(
-      {final int startTime,
-      final int endTime,
+      {required final DateTime startTime,
+      required final DateTime endTime,
       final int totalWorkHour}) = _$_WorkShiftEntity;
 
   @override
-  int get startTime;
+  DateTime get startTime;
   @override
-  int get endTime;
+  DateTime get endTime;
   @override
   int get totalWorkHour;
   @override

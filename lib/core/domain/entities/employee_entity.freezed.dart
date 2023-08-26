@@ -20,6 +20,7 @@ mixin _$EmployeeEntity {
   String get name => throw _privateConstructorUsedError;
   String get surname => throw _privateConstructorUsedError;
   String get workRole => throw _privateConstructorUsedError;
+  String get imagePath => throw _privateConstructorUsedError;
   int get phoneNumber => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   List<WorkShiftEntity> get shifts => throw _privateConstructorUsedError;
@@ -42,6 +43,7 @@ abstract class $EmployeeEntityCopyWith<$Res> {
       String name,
       String surname,
       String workRole,
+      String imagePath,
       int phoneNumber,
       String email,
       List<WorkShiftEntity> shifts,
@@ -66,6 +68,7 @@ class _$EmployeeEntityCopyWithImpl<$Res, $Val extends EmployeeEntity>
     Object? name = null,
     Object? surname = null,
     Object? workRole = null,
+    Object? imagePath = null,
     Object? phoneNumber = null,
     Object? email = null,
     Object? shifts = null,
@@ -88,6 +91,10 @@ class _$EmployeeEntityCopyWithImpl<$Res, $Val extends EmployeeEntity>
       workRole: null == workRole
           ? _value.workRole
           : workRole // ignore: cast_nullable_to_non_nullable
+              as String,
+      imagePath: null == imagePath
+          ? _value.imagePath
+          : imagePath // ignore: cast_nullable_to_non_nullable
               as String,
       phoneNumber: null == phoneNumber
           ? _value.phoneNumber
@@ -126,6 +133,7 @@ abstract class _$$_EmployeeEntityCopyWith<$Res>
       String name,
       String surname,
       String workRole,
+      String imagePath,
       int phoneNumber,
       String email,
       List<WorkShiftEntity> shifts,
@@ -148,6 +156,7 @@ class __$$_EmployeeEntityCopyWithImpl<$Res>
     Object? name = null,
     Object? surname = null,
     Object? workRole = null,
+    Object? imagePath = null,
     Object? phoneNumber = null,
     Object? email = null,
     Object? shifts = null,
@@ -170,6 +179,10 @@ class __$$_EmployeeEntityCopyWithImpl<$Res>
       workRole: null == workRole
           ? _value.workRole
           : workRole // ignore: cast_nullable_to_non_nullable
+              as String,
+      imagePath: null == imagePath
+          ? _value.imagePath
+          : imagePath // ignore: cast_nullable_to_non_nullable
               as String,
       phoneNumber: null == phoneNumber
           ? _value.phoneNumber
@@ -203,6 +216,7 @@ class _$_EmployeeEntity implements _EmployeeEntity {
       this.name = '',
       this.surname = '',
       this.workRole = '',
+      this.imagePath = '',
       this.phoneNumber = 0,
       this.email = '',
       final List<WorkShiftEntity> shifts = const <WorkShiftEntity>[],
@@ -222,6 +236,9 @@ class _$_EmployeeEntity implements _EmployeeEntity {
   @override
   @JsonKey()
   final String workRole;
+  @override
+  @JsonKey()
+  final String imagePath;
   @override
   @JsonKey()
   final int phoneNumber;
@@ -246,7 +263,7 @@ class _$_EmployeeEntity implements _EmployeeEntity {
 
   @override
   String toString() {
-    return 'EmployeeEntity(id: $id, name: $name, surname: $surname, workRole: $workRole, phoneNumber: $phoneNumber, email: $email, shifts: $shifts, employmentDate: $employmentDate, totalActiveNotifications: $totalActiveNotifications)';
+    return 'EmployeeEntity(id: $id, name: $name, surname: $surname, workRole: $workRole, imagePath: $imagePath, phoneNumber: $phoneNumber, email: $email, shifts: $shifts, employmentDate: $employmentDate, totalActiveNotifications: $totalActiveNotifications)';
   }
 
   @override
@@ -259,6 +276,8 @@ class _$_EmployeeEntity implements _EmployeeEntity {
             (identical(other.surname, surname) || other.surname == surname) &&
             (identical(other.workRole, workRole) ||
                 other.workRole == workRole) &&
+            (identical(other.imagePath, imagePath) ||
+                other.imagePath == imagePath) &&
             (identical(other.phoneNumber, phoneNumber) ||
                 other.phoneNumber == phoneNumber) &&
             (identical(other.email, email) || other.email == email) &&
@@ -277,6 +296,7 @@ class _$_EmployeeEntity implements _EmployeeEntity {
       name,
       surname,
       workRole,
+      imagePath,
       phoneNumber,
       email,
       const DeepCollectionEquality().hash(_shifts),
@@ -296,6 +316,7 @@ abstract class _EmployeeEntity implements EmployeeEntity {
       final String name,
       final String surname,
       final String workRole,
+      final String imagePath,
       final int phoneNumber,
       final String email,
       final List<WorkShiftEntity> shifts,
@@ -310,6 +331,8 @@ abstract class _EmployeeEntity implements EmployeeEntity {
   String get surname;
   @override
   String get workRole;
+  @override
+  String get imagePath;
   @override
   int get phoneNumber;
   @override

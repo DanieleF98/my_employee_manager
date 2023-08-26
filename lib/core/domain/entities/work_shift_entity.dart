@@ -5,8 +5,8 @@ part 'work_shift_entity.freezed.dart';
 @freezed
 class WorkShiftEntity with _$WorkShiftEntity {
   const factory WorkShiftEntity({
-    @Default(0) int startTime,
-    @Default(0) int endTime,
+    required DateTime startTime,
+    required DateTime endTime,
     @Default(0) int totalWorkHour,
   }) = _WorkShiftEntity;
 }

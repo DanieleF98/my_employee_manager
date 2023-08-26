@@ -10,6 +10,7 @@ class EmployeeEntity with _$EmployeeEntity {
     @Default('') String name,
     @Default('') String surname,
     @Default('') String workRole,
+    @Default('') String imagePath,
     @Default(0) int phoneNumber,
     @Default('') String email,
     @Default(<WorkShiftEntity>[]) List<WorkShiftEntity> shifts,

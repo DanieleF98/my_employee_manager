@@ -24,6 +24,7 @@ mixin _$EmployeeModel {
   String? get name => throw _privateConstructorUsedError;
   String? get surname => throw _privateConstructorUsedError;
   String? get workRole => throw _privateConstructorUsedError;
+  String? get imagePath => throw _privateConstructorUsedError;
   int? get phoneNumber => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
   List<WorkShiftModel?>? get workShifts => throw _privateConstructorUsedError;
@@ -47,6 +48,7 @@ abstract class $EmployeeModelCopyWith<$Res> {
       String? name,
       String? surname,
       String? workRole,
+      String? imagePath,
       int? phoneNumber,
       String? email,
       List<WorkShiftModel?>? workShifts,
@@ -71,6 +73,7 @@ class _$EmployeeModelCopyWithImpl<$Res, $Val extends EmployeeModel>
     Object? name = freezed,
     Object? surname = freezed,
     Object? workRole = freezed,
+    Object? imagePath = freezed,
     Object? phoneNumber = freezed,
     Object? email = freezed,
     Object? workShifts = freezed,
@@ -93,6 +96,10 @@ class _$EmployeeModelCopyWithImpl<$Res, $Val extends EmployeeModel>
       workRole: freezed == workRole
           ? _value.workRole
           : workRole // ignore: cast_nullable_to_non_nullable
+              as String?,
+      imagePath: freezed == imagePath
+          ? _value.imagePath
+          : imagePath // ignore: cast_nullable_to_non_nullable
               as String?,
       phoneNumber: freezed == phoneNumber
           ? _value.phoneNumber
@@ -131,6 +138,7 @@ abstract class _$$_EmployeeModelCopyWith<$Res>
       String? name,
       String? surname,
       String? workRole,
+      String? imagePath,
       int? phoneNumber,
       String? email,
       List<WorkShiftModel?>? workShifts,
@@ -153,6 +161,7 @@ class __$$_EmployeeModelCopyWithImpl<$Res>
     Object? name = freezed,
     Object? surname = freezed,
     Object? workRole = freezed,
+    Object? imagePath = freezed,
     Object? phoneNumber = freezed,
     Object? email = freezed,
     Object? workShifts = freezed,
@@ -175,6 +184,10 @@ class __$$_EmployeeModelCopyWithImpl<$Res>
       workRole: freezed == workRole
           ? _value.workRole
           : workRole // ignore: cast_nullable_to_non_nullable
+              as String?,
+      imagePath: freezed == imagePath
+          ? _value.imagePath
+          : imagePath // ignore: cast_nullable_to_non_nullable
               as String?,
       phoneNumber: freezed == phoneNumber
           ? _value.phoneNumber
@@ -208,6 +221,7 @@ class _$_EmployeeModel implements _EmployeeModel {
       this.name,
       this.surname,
       this.workRole,
+      this.imagePath,
       this.phoneNumber,
       this.email,
       final List<WorkShiftModel?>? workShifts,
@@ -226,6 +240,8 @@ class _$_EmployeeModel implements _EmployeeModel {
   final String? surname;
   @override
   final String? workRole;
+  @override
+  final String? imagePath;
   @override
   final int? phoneNumber;
   @override
@@ -247,7 +263,7 @@ class _$_EmployeeModel implements _EmployeeModel {
 
   @override
   String toString() {
-    return 'EmployeeModel(id: $id, name: $name, surname: $surname, workRole: $workRole, phoneNumber: $phoneNumber, email: $email, workShifts: $workShifts, employmentDate: $employmentDate, totalActiveNotifications: $totalActiveNotifications)';
+    return 'EmployeeModel(id: $id, name: $name, surname: $surname, workRole: $workRole, imagePath: $imagePath, phoneNumber: $phoneNumber, email: $email, workShifts: $workShifts, employmentDate: $employmentDate, totalActiveNotifications: $totalActiveNotifications)';
   }
 
   @override
@@ -260,6 +276,8 @@ class _$_EmployeeModel implements _EmployeeModel {
             (identical(other.surname, surname) || other.surname == surname) &&
             (identical(other.workRole, workRole) ||
                 other.workRole == workRole) &&
+            (identical(other.imagePath, imagePath) ||
+                other.imagePath == imagePath) &&
             (identical(other.phoneNumber, phoneNumber) ||
                 other.phoneNumber == phoneNumber) &&
             (identical(other.email, email) || other.email == email) &&
@@ -280,6 +298,7 @@ class _$_EmployeeModel implements _EmployeeModel {
       name,
       surname,
       workRole,
+      imagePath,
       phoneNumber,
       email,
       const DeepCollectionEquality().hash(_workShifts),
@@ -306,6 +325,7 @@ abstract class _EmployeeModel implements EmployeeModel {
       final String? name,
       final String? surname,
       final String? workRole,
+      final String? imagePath,
       final int? phoneNumber,
       final String? email,
       final List<WorkShiftModel?>? workShifts,
@@ -323,6 +343,8 @@ abstract class _EmployeeModel implements EmployeeModel {
   String? get surname;
   @override
   String? get workRole;
+  @override
+  String? get imagePath;
   @override
   int? get phoneNumber;
   @override

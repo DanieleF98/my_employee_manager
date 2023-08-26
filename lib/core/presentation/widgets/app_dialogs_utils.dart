@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 abstract class AppDialogsUtils {
-  static void showFullScreenLoader({required BuildContext context}) =>
+  static Future<void> showFullScreenLoader(
+          {required BuildContext context}) async =>
       showDialog(
         context: context,
         barrierDismissible: false,

@@ -32,6 +32,7 @@ class EmployeesMapper extends Mapper<List<EmployeeEntity>,
         name: employeeModel.name ?? '',
         surname: employeeModel.surname ?? '',
         workRole: employeeModel.workRole ?? '',
+        imagePath: employeeModel.imagePath ?? '',
         phoneNumber: employeeModel.phoneNumber ?? 0,
         email: employeeModel.email ?? '',
         shifts: employeeModel.workShifts
@@ -48,8 +49,9 @@ class EmployeesMapper extends Mapper<List<EmployeeEntity>,
 
   WorkShiftEntity _mapWorkShiftEntity({required WorkShiftModel? shiftModel}) =>
       WorkShiftEntity(
-        startTime: shiftModel?.startTime ?? 0,
-        endTime: shiftModel?.endTime ?? 0,
+        startTime:
+            DateTime.fromMillisecondsSinceEpoch(shiftModel?.startTime ?? 0),
+        endTime: DateTime.fromMillisecondsSinceEpoch(shiftModel?.endTime ?? 0),
         totalWorkHour: shiftModel?.totalWorkHour ?? 0,
       );
 }

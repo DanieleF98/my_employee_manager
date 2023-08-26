@@ -11,6 +11,7 @@ class EmployeeModel with _$EmployeeModel {
     String? name,
     String? surname,
     String? workRole,
+    String? imagePath,
     int? phoneNumber,
     String? email,
     List<WorkShiftModel?>? workShifts,

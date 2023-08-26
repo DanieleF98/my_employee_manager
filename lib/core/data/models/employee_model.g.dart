@@ -12,6 +12,7 @@ _$_EmployeeModel _$$_EmployeeModelFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String?,
       surname: json['surname'] as String?,
       workRole: json['workRole'] as String?,
+      imagePath: json['imagePath'] as String?,
       phoneNumber: json['phoneNumber'] as int?,
       email: json['email'] as String?,
       workShifts: (json['workShifts'] as List<dynamic>?)
@@ -29,6 +30,7 @@ Map<String, dynamic> _$$_EmployeeModelToJson(_$_EmployeeModel instance) =>
       'name': instance.name,
       'surname': instance.surname,
       'workRole': instance.workRole,
+      'imagePath': instance.imagePath,
       'phoneNumber': instance.phoneNumber,
       'email': instance.email,
       'workShifts': instance.workShifts,
