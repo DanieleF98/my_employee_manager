@@ -9,7 +9,10 @@ class HomePageState with _$HomePageState {
   const factory HomePageState.initial() = HomePageInitialState;
   const factory HomePageState.loading() = HomePageLoadingState;
   const factory HomePageState.loaded({
-    required List<EmployeeEntity> employees,
+    required List<EmployeeEntity> employeesList,
+    required List<EmployeeEntity> initialEmployeesList,
+    required int selectedDay,
+    required bool hasToPopLoader,
   }) = HomePageLoadedState;
   const factory HomePageState.error() = HomePageErrorState;
 }

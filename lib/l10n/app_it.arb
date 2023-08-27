@@ -9,5 +9,15 @@
     "somethingWentWrong": "Something went wrong",
     "errorRetrievingEmployees": "An error occurred while retrieving employees",
     "currentlyWorking": "Currently working",
-    "currentlyNotWorking": "Currently not working"
+    "currentlyNotWorking": "Currently not working",
+    "employeesWorkingToday": "Employees working today",
+    "employeesWorkingOnDate": "Employees working on {date}",
+    "@employeesWorkingOnDate": {
+        "placeholders": {
+            "date": {
+                "type": "String",
+                "example": "DD/MM"
+            }
+        }
+    }
 }

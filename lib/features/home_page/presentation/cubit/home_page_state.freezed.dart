@@ -20,7 +20,12 @@ mixin _$HomePageState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<EmployeeEntity> employees) loaded,
+    required TResult Function(
+            List<EmployeeEntity> employeesList,
+            List<EmployeeEntity> initialEmployeesList,
+            int selectedDay,
+            bool hasToPopLoader)
+        loaded,
     required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +33,12 @@ mixin _$HomePageState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<EmployeeEntity> employees)? loaded,
+    TResult? Function(
+            List<EmployeeEntity> employeesList,
+            List<EmployeeEntity> initialEmployeesList,
+            int selectedDay,
+            bool hasToPopLoader)?
+        loaded,
     TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +46,12 @@ mixin _$HomePageState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<EmployeeEntity> employees)? loaded,
+    TResult Function(
+            List<EmployeeEntity> employeesList,
+            List<EmployeeEntity> initialEmployeesList,
+            int selectedDay,
+            bool hasToPopLoader)?
+        loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) =>
@@ -126,7 +141,12 @@ class _$HomePageInitialState implements HomePageInitialState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<EmployeeEntity> employees) loaded,
+    required TResult Function(
+            List<EmployeeEntity> employeesList,
+            List<EmployeeEntity> initialEmployeesList,
+            int selectedDay,
+            bool hasToPopLoader)
+        loaded,
     required TResult Function() error,
   }) {
     return initial();
@@ -137,7 +157,12 @@ class _$HomePageInitialState implements HomePageInitialState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<EmployeeEntity> employees)? loaded,
+    TResult? Function(
+            List<EmployeeEntity> employeesList,
+            List<EmployeeEntity> initialEmployeesList,
+            int selectedDay,
+            bool hasToPopLoader)?
+        loaded,
     TResult? Function()? error,
   }) {
     return initial?.call();
@@ -148,7 +173,12 @@ class _$HomePageInitialState implements HomePageInitialState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<EmployeeEntity> employees)? loaded,
+    TResult Function(
+            List<EmployeeEntity> employeesList,
+            List<EmployeeEntity> initialEmployeesList,
+            int selectedDay,
+            bool hasToPopLoader)?
+        loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -240,7 +270,12 @@ class _$HomePageLoadingState implements HomePageLoadingState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<EmployeeEntity> employees) loaded,
+    required TResult Function(
+            List<EmployeeEntity> employeesList,
+            List<EmployeeEntity> initialEmployeesList,
+            int selectedDay,
+            bool hasToPopLoader)
+        loaded,
     required TResult Function() error,
   }) {
     return loading();
@@ -251,7 +286,12 @@ class _$HomePageLoadingState implements HomePageLoadingState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<EmployeeEntity> employees)? loaded,
+    TResult? Function(
+            List<EmployeeEntity> employeesList,
+            List<EmployeeEntity> initialEmployeesList,
+            int selectedDay,
+            bool hasToPopLoader)?
+        loaded,
     TResult? Function()? error,
   }) {
     return loading?.call();
@@ -262,7 +302,12 @@ class _$HomePageLoadingState implements HomePageLoadingState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<EmployeeEntity> employees)? loaded,
+    TResult Function(
+            List<EmployeeEntity> employeesList,
+            List<EmployeeEntity> initialEmployeesList,
+            int selectedDay,
+            bool hasToPopLoader)?
+        loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -320,7 +365,11 @@ abstract class _$$HomePageLoadedStateCopyWith<$Res> {
           $Res Function(_$HomePageLoadedState) then) =
       __$$HomePageLoadedStateCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<EmployeeEntity> employees});
+  $Res call(
+      {List<EmployeeEntity> employeesList,
+      List<EmployeeEntity> initialEmployeesList,
+      int selectedDay,
+      bool hasToPopLoader});
 }
 
 /// @nodoc
@@ -334,13 +383,28 @@ class __$$HomePageLoadedStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? employees = null,
+    Object? employeesList = null,
+    Object? initialEmployeesList = null,
+    Object? selectedDay = null,
+    Object? hasToPopLoader = null,
   }) {
     return _then(_$HomePageLoadedState(
-      employees: null == employees
-          ? _value._employees
-          : employees // ignore: cast_nullable_to_non_nullable
+      employeesList: null == employeesList
+          ? _value._employeesList
+          : employeesList // ignore: cast_nullable_to_non_nullable
               as List<EmployeeEntity>,
+      initialEmployeesList: null == initialEmployeesList
+          ? _value._initialEmployeesList
+          : initialEmployeesList // ignore: cast_nullable_to_non_nullable
+              as List<EmployeeEntity>,
+      selectedDay: null == selectedDay
+          ? _value.selectedDay
+          : selectedDay // ignore: cast_nullable_to_non_nullable
+              as int,
+      hasToPopLoader: null == hasToPopLoader
+          ? _value.hasToPopLoader
+          : hasToPopLoader // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -348,20 +412,39 @@ class __$$HomePageLoadedStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HomePageLoadedState implements HomePageLoadedState {
-  const _$HomePageLoadedState({required final List<EmployeeEntity> employees})
-      : _employees = employees;
+  const _$HomePageLoadedState(
+      {required final List<EmployeeEntity> employeesList,
+      required final List<EmployeeEntity> initialEmployeesList,
+      required this.selectedDay,
+      required this.hasToPopLoader})
+      : _employeesList = employeesList,
+        _initialEmployeesList = initialEmployeesList;
 
-  final List<EmployeeEntity> _employees;
+  final List<EmployeeEntity> _employeesList;
   @override
-  List<EmployeeEntity> get employees {
-    if (_employees is EqualUnmodifiableListView) return _employees;
+  List<EmployeeEntity> get employeesList {
+    if (_employeesList is EqualUnmodifiableListView) return _employeesList;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_employees);
+    return EqualUnmodifiableListView(_employeesList);
+  }
+
+  final List<EmployeeEntity> _initialEmployeesList;
+  @override
+  List<EmployeeEntity> get initialEmployeesList {
+    if (_initialEmployeesList is EqualUnmodifiableListView)
+      return _initialEmployeesList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_initialEmployeesList);
   }
 
   @override
+  final int selectedDay;
+  @override
+  final bool hasToPopLoader;
+
+  @override
   String toString() {
-    return 'HomePageState.loaded(employees: $employees)';
+    return 'HomePageState.loaded(employeesList: $employeesList, initialEmployeesList: $initialEmployeesList, selectedDay: $selectedDay, hasToPopLoader: $hasToPopLoader)';
   }
 
   @override
@@ -370,12 +453,22 @@ class _$HomePageLoadedState implements HomePageLoadedState {
         (other.runtimeType == runtimeType &&
             other is _$HomePageLoadedState &&
             const DeepCollectionEquality()
-                .equals(other._employees, _employees));
+                .equals(other._employeesList, _employeesList) &&
+            const DeepCollectionEquality()
+                .equals(other._initialEmployeesList, _initialEmployeesList) &&
+            (identical(other.selectedDay, selectedDay) ||
+                other.selectedDay == selectedDay) &&
+            (identical(other.hasToPopLoader, hasToPopLoader) ||
+                other.hasToPopLoader == hasToPopLoader));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_employees));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_employeesList),
+      const DeepCollectionEquality().hash(_initialEmployeesList),
+      selectedDay,
+      hasToPopLoader);
 
   @JsonKey(ignore: true)
   @override
@@ -389,10 +482,16 @@ class _$HomePageLoadedState implements HomePageLoadedState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<EmployeeEntity> employees) loaded,
+    required TResult Function(
+            List<EmployeeEntity> employeesList,
+            List<EmployeeEntity> initialEmployeesList,
+            int selectedDay,
+            bool hasToPopLoader)
+        loaded,
     required TResult Function() error,
   }) {
-    return loaded(employees);
+    return loaded(
+        employeesList, initialEmployeesList, selectedDay, hasToPopLoader);
   }
 
   @override
@@ -400,10 +499,16 @@ class _$HomePageLoadedState implements HomePageLoadedState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<EmployeeEntity> employees)? loaded,
+    TResult? Function(
+            List<EmployeeEntity> employeesList,
+            List<EmployeeEntity> initialEmployeesList,
+            int selectedDay,
+            bool hasToPopLoader)?
+        loaded,
     TResult? Function()? error,
   }) {
-    return loaded?.call(employees);
+    return loaded?.call(
+        employeesList, initialEmployeesList, selectedDay, hasToPopLoader);
   }
 
   @override
@@ -411,12 +516,18 @@ class _$HomePageLoadedState implements HomePageLoadedState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<EmployeeEntity> employees)? loaded,
+    TResult Function(
+            List<EmployeeEntity> employeesList,
+            List<EmployeeEntity> initialEmployeesList,
+            int selectedDay,
+            bool hasToPopLoader)?
+        loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(employees);
+      return loaded(
+          employeesList, initialEmployeesList, selectedDay, hasToPopLoader);
     }
     return orElse();
   }
@@ -461,9 +572,15 @@ class _$HomePageLoadedState implements HomePageLoadedState {
 
 abstract class HomePageLoadedState implements HomePageState {
   const factory HomePageLoadedState(
-      {required final List<EmployeeEntity> employees}) = _$HomePageLoadedState;
+      {required final List<EmployeeEntity> employeesList,
+      required final List<EmployeeEntity> initialEmployeesList,
+      required final int selectedDay,
+      required final bool hasToPopLoader}) = _$HomePageLoadedState;
 
-  List<EmployeeEntity> get employees;
+  List<EmployeeEntity> get employeesList;
+  List<EmployeeEntity> get initialEmployeesList;
+  int get selectedDay;
+  bool get hasToPopLoader;
   @JsonKey(ignore: true)
   _$$HomePageLoadedStateCopyWith<_$HomePageLoadedState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -509,7 +626,12 @@ class _$HomePageErrorState implements HomePageErrorState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<EmployeeEntity> employees) loaded,
+    required TResult Function(
+            List<EmployeeEntity> employeesList,
+            List<EmployeeEntity> initialEmployeesList,
+            int selectedDay,
+            bool hasToPopLoader)
+        loaded,
     required TResult Function() error,
   }) {
     return error();
@@ -520,7 +642,12 @@ class _$HomePageErrorState implements HomePageErrorState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<EmployeeEntity> employees)? loaded,
+    TResult? Function(
+            List<EmployeeEntity> employeesList,
+            List<EmployeeEntity> initialEmployeesList,
+            int selectedDay,
+            bool hasToPopLoader)?
+        loaded,
     TResult? Function()? error,
   }) {
     return error?.call();
@@ -531,7 +658,12 @@ class _$HomePageErrorState implements HomePageErrorState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<EmployeeEntity> employees)? loaded,
+    TResult Function(
+            List<EmployeeEntity> employeesList,
+            List<EmployeeEntity> initialEmployeesList,
+            int selectedDay,
+            bool hasToPopLoader)?
+        loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {

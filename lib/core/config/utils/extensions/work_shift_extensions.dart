@@ -8,4 +8,5 @@ extension WorkShiftExtensions on WorkShiftEntity {
       endTime.isAfter(
         DateTime.now(),
       );
+  bool isWorkingInDay(int day) => startTime.day == day;
 }

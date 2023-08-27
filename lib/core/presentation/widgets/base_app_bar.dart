@@ -33,9 +33,11 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
             padding: EdgeInsets.only(
               right: AppConstants.defaultPadding / 2,
             ),
-            child: BaseAppIconButton(
-              iconSize: AppConstants.defaultIconSize,
-              iconData: Icons.search,
+            child: SizedBox(
+              width: AppConstants.defaultIconSize,
+              child: BaseAppIconButton(
+                iconData: Icons.search,
+              ),
             ),
           ),
         if (hasToShowProfile)
@@ -43,9 +45,11 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
             padding: EdgeInsets.only(
               right: AppConstants.defaultPadding,
             ),
-            child: BaseAppIconButton(
-              iconSize: AppConstants.defaultIconSize,
-              iconData: Icons.account_circle,
+            child: SizedBox(
+              width: AppConstants.defaultIconSize,
+              child: BaseAppIconButton(
+                iconData: Icons.account_circle,
+              ),
             ),
           ),
       ],

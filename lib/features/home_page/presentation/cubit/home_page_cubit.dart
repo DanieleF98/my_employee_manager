@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_employee_manager/core/config/utils/extensions/employee_extensions.dart';
 
 import '../../domain/use_cases/get_all_employees_use_case.dart';
 import 'home_page_state.dart';
@@ -21,10 +22,41 @@ class HomePageCubit extends Cubit<HomePageState> {
         (failure) => emit(
               const HomePageState.error(),
             ),
-        (employees) => emit(
+        (employeesList) => emit(
               HomePageState.loaded(
-                employees: employees,
+                selectedDay: 0,
+                employeesList: employeesList
+                    .where(
+                      (employee) => employee.isWorkingInDay(
+                        DateTime.now().day,
+                      ),
+                    )
+                    .toList(),
+                initialEmployeesList: employeesList,
+                hasToPopLoader: true,
               ),
             ));
   }
+
+  void filterEmployeesByDay(int numberOfDays) => state.mapOrNull(
+        loaded: (loaded) => emit(
+          loaded.copyWith(
+            selectedDay: numberOfDays,
+            hasToPopLoader: false,
+            employeesList: loaded.initialEmployeesList
+                .where(
+                  (employee) => employee.isWorkingInDay(
+                    (DateTime.now()
+                        .add(
+                          Duration(
+                            days: numberOfDays,
+                          ),
+                        )
+                        .day),
+                  ),
+                )
+                .toList(),
+          ),
+        ),
+      );
 }

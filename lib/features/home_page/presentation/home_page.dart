@@ -40,13 +40,18 @@ class _HomePageState extends State<HomePage> {
               message: AppLocalizations.of(context).errorRetrievingEmployees,
             );
           },
-          loaded: (employees) => context.pop(),
+          loaded: (_, __, ___, hasToPopLoader) {
+            if (hasToPopLoader) {
+              context.pop();
+            }
+          },
           orElse: () {},
         );
       },
-      builder: (context, state) => state.maybeWhen(
-        loaded: (employees) => HomeBodyWidget(
-          employees: employees,
+      builder: (context, state) => state.maybeMap(
+        loaded: (loadedState) => HomeBodyWidget(
+          employees: loadedState.employeesList,
+          selectedDay: loadedState.selectedDay,
         ),
         orElse: () => const IgnorePointer(),
       ),

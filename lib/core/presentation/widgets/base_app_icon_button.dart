@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../config/constants/app_constants.dart';
+import 'package:my_employee_manager/core/config/constants/app_constants.dart';
 
 class BaseAppIconButton extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -17,15 +16,13 @@ class BaseAppIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: AppConstants.defaultIconSize,
-      child: IconButton(
-        onPressed: onPressed,
-        icon: Icon(
-          iconData,
-          size: iconSize,
-          color: iconColor,
-        ),
+    return IconButton(
+      iconSize: AppConstants.defaultIconSize,
+      onPressed: onPressed,
+      icon: Icon(
+        iconData,
+        size: iconSize,
+        color: iconColor,
       ),
     );
   }
