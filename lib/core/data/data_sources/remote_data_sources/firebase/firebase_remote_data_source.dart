@@ -17,4 +17,6 @@ abstract class FirebaseRemoteDataSource implements RemoteDataSource {
 
   Future<Either<GenericFailureEntity, bool>> login(
       (String, String) emailAndPassword);
+
+  Future<Either<GenericFailureEntity, bool>> logout();
 }

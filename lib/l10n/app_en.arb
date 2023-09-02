@@ -1,6 +1,7 @@
 {
     "myEmployeeManager": "My Employee Manager",
     "login": "Login",
+    "logout": "Logout",
     "username": "Username",
     "password": "Password",
     "home": "Home",

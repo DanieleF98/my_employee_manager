@@ -3,6 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_employee_manager/core/config/constants/app_constants.dart';
 import 'package:my_employee_manager/core/config/styles/app_styles.dart';
 import 'package:my_employee_manager/features/home_page/presentation/widget/home_page_bottom_sheet_search_widget.dart';
+import 'package:my_employee_manager/features/logout/presentation/logout_bottom_sheet_widget.dart';
 
 import 'base_app_icon_button.dart';
 
@@ -38,14 +39,15 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
           ),
         if (hasToShowProfile)
-          const Padding(
-            padding: EdgeInsets.only(
+          Padding(
+            padding: const EdgeInsets.only(
               right: AppConstants.defaultPadding,
             ),
-            child: SizedBox(
-              width: AppConstants.defaultIconSize,
-              child: BaseAppIconButton(
-                iconData: Icons.account_circle,
+            child: BaseAppIconButton(
+              iconData: Icons.account_circle,
+              onPressed: () => showBottomSheet(
+                context: context,
+                builder: (context) => const LogoutBottomSheetWidget(),
               ),
             ),
           ),

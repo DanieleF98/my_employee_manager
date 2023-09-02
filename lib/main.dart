@@ -2,7 +2,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_employee_manager/core/config/navigation/navigation_routes.dart';
-import 'package:my_employee_manager/di/app_injector.dart' as di;
 
 import 'config/firebase_options.dart';
 import 'core/config/theme/app_theme.dart';
@@ -12,7 +11,6 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  di.setupDependencies();
   runApp(const MyEmployeeManager());
 }
 

@@ -78,4 +78,25 @@ class FirebaseRemoteDataSourceImpl implements FirebaseRemoteDataSource {
       return Left(GenericFailureEntity.defaultFailure());
     }
   }
+
+  @override
+  Future<Either<GenericFailureEntity, bool>> logout() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      return const Right(
+        true,
+      );
+    } on FirebaseAuthException catch (firebaseException) {
+      return Left(
+        GenericFailureEntity.specificFailure(
+          message: firebaseException.message,
+          code: firebaseException.code,
+        ),
+      );
+    } catch (e) {
+      return Left(
+        GenericFailureEntity.defaultFailure(),
+      );
+    }
+  }
 }

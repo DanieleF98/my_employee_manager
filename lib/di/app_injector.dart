@@ -8,13 +8,17 @@ import 'package:my_employee_manager/features/home_page/presentation/cubit/home_p
 import 'package:my_employee_manager/features/login/data/repository/login_repository_impl.dart';
 import 'package:my_employee_manager/features/login/domain/repository/login_repository.dart';
 import 'package:my_employee_manager/features/login/domain/use_cases/login_use_case.dart';
+import 'package:my_employee_manager/features/logout/data/repository/logout_repository_impl.dart';
+import 'package:my_employee_manager/features/logout/domain/repository/logout_repository.dart';
+import 'package:my_employee_manager/features/logout/domain/use_cases/logout_use_case.dart';
+import 'package:my_employee_manager/features/logout/presentation/cubit/logout_cubit.dart';
 
 import '../core/data/data_sources/remote_data_sources/remote_data_source.dart';
 import '../core/domain/data_sources/remote_data_sources/firebase/firebase_remote_data_source_impl.dart';
 import '../core/domain/data_sources/remote_data_sources/remote_data_source_impl.dart';
 import '../features/login/presentation/cubit/login_cubit.dart';
 
-final appInjector = GetIt.instance;
+final appInjector = GetIt.instance..allowReassignment = true;
 
 void setupDependencies() {
   _setupDataSources();
@@ -38,6 +42,11 @@ void _setupRepositories() {
       firebaseRemoteDataSource: appInjector.get<FirebaseRemoteDataSource>(),
     ),
   );
+  appInjector.registerFactory<LogoutRepository>(
+    () => LogoutRepositoryImpl(
+      firebaseRemoteDataSource: appInjector.get<FirebaseRemoteDataSource>(),
+    ),
+  );
   appInjector.registerFactory<HomePageRepository>(
     () => HomePageRepositoryImpl(
       firebaseRemoteDataSource: appInjector.get<FirebaseRemoteDataSource>(),
@@ -51,6 +60,11 @@ void _setupUseCases() {
       loginRepository: appInjector.get<LoginRepository>(),
     ),
   );
+  appInjector.registerFactory<LogoutUseCase>(
+    () => LogoutUseCase(
+      logoutRepository: appInjector.get<LogoutRepository>(),
+    ),
+  );
   appInjector.registerFactory<GetAllEmployeesUseCase>(
     () => GetAllEmployeesUseCase(
       homePageRepository: appInjector.get<HomePageRepository>(),
@@ -62,6 +76,11 @@ void _setupCubits() {
   appInjector.registerSingleton<LoginCubit>(
     LoginCubit(
       loginUseCase: appInjector.get<LoginUseCase>(),
+    ),
+  );
+  appInjector.registerSingleton<LogoutCubit>(
+    LogoutCubit(
+      logoutUseCase: appInjector.get<LogoutUseCase>(),
     ),
   );
   appInjector.registerSingleton<HomePageCubit>(

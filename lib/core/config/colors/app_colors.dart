@@ -9,4 +9,5 @@ abstract class AppColors {
   static const defaultEmployeeIconColor = Color(0xFFEADDFF);
   static const defaultBottomSheetColor = Color(0xFFECE6F0);
   static const defaultDividerColor = Color(0xFF49454F);
+  static const defaultButtonColor = Color(0xFF6750A4);
 }

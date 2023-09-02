@@ -10,6 +10,10 @@ enum AppStyles {
     fontSize: 18,
     color: AppColors.defaultBlack,
   )),
+  regular18White(TextStyle(
+    fontSize: 18,
+    color: AppColors.defaultWhite,
+  )),
   regular30(TextStyle(
     fontSize: 30,
     color: AppColors.defaultBlack,
