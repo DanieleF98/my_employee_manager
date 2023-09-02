@@ -17,30 +17,47 @@ class EmployeeCardImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(100.0),
-      child: CachedNetworkImage(
-        imageUrl: imagePath,
-        height: AppConstants.employeeCardIconSize,
-        width: AppConstants.employeeCardIconSize,
-        imageBuilder: (context, imageProvider) => Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: imageProvider,
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
-        progressIndicatorBuilder: (context, url, progress) =>
-            CircularProgressIndicator(value: progress.progress),
-        errorWidget: (context, error, stackTrace) => Container(
-          color: AppColors.defaultEmployeeIconColor,
-          height: AppConstants.employeeCardIconSize,
-          width: AppConstants.employeeCardIconSize,
-          child: Center(
-            child: Text(
-              employeeInitials,
-              style: AppStyles.regular18.style,
-            ),
-          ),
+      child: imagePath.isEmpty
+          ? _ErrorImageWidget(
+              employeeInitials: employeeInitials,
+            )
+          : CachedNetworkImage(
+              imageUrl: imagePath,
+              height: AppConstants.employeeCardIconSize,
+              width: AppConstants.employeeCardIconSize,
+              imageBuilder: (context, imageProvider) => Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: imageProvider,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+              progressIndicatorBuilder: (context, url, progress) =>
+                  CircularProgressIndicator(value: progress.progress),
+              errorWidget: (context, error, stackTrace) => _ErrorImageWidget(
+                    employeeInitials: employeeInitials,
+                  )),
+    );
+  }
+}
+
+class _ErrorImageWidget extends StatelessWidget {
+  final String employeeInitials;
+  const _ErrorImageWidget({
+    required this.employeeInitials,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: AppColors.defaultEmployeeIconColor,
+      height: AppConstants.employeeCardIconSize,
+      width: AppConstants.employeeCardIconSize,
+      child: Center(
+        child: Text(
+          employeeInitials,
+          style: AppStyles.regular18.style,
         ),
       ),
     );

@@ -5,7 +5,8 @@ import 'package:go_router/go_router.dart';
 import 'package:my_employee_manager/core/config/utils/extensions/int_extensions.dart';
 import 'package:my_employee_manager/core/presentation/widgets/base_widget.dart';
 import 'package:my_employee_manager/di/app_injector.dart';
-import 'package:my_employee_manager/features/home_page/presentation/cubit/home_page_cubit.dart';
+import 'package:my_employee_manager/features/home_page/presentation/cubit/home_page/home_page_cubit.dart';
+import 'package:my_employee_manager/features/home_page/presentation/cubit/home_page_search_employee/home_page_search_employee_cubit.dart';
 
 class MainContainerWithBottomNavigationWidget extends StatelessWidget {
   final StatefulNavigationShell navigationShell;
@@ -22,6 +23,9 @@ class MainContainerWithBottomNavigationWidget extends StatelessWidget {
         BlocProvider<HomePageCubit>(
           create: (context) => appInjector.get<HomePageCubit>(),
         ),
+        BlocProvider<HomePageSearchEmployeeCubit>(
+          create: (context) => appInjector.get<HomePageSearchEmployeeCubit>(),
+        ),
       ],
       child: BaseWidget(
         hasToShowProfile: true,
@@ -29,7 +33,7 @@ class MainContainerWithBottomNavigationWidget extends StatelessWidget {
         bottomNavigationBar: BottomNavigationBar(
             useLegacyColorScheme: false,
             currentIndex: navigationShell.currentIndex,
-            onTap: _onTap,
+            onTap: (index) => _onTap(index, context),
             items: [
               BottomNavigationBarItem(
                 icon: const Icon(
@@ -55,7 +59,12 @@ class MainContainerWithBottomNavigationWidget extends StatelessWidget {
     );
   }
 
-  void _onTap(index) => navigationShell.goBranch(
-        index,
-      );
+  void _onTap(index, context) {
+    if (Navigator.canPop(context)) {
+      Navigator.of(context).pop();
+    }
+    navigationShell.goBranch(
+      index,
+    );
+  }
 }

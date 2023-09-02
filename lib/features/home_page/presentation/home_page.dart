@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_employee_manager/di/app_injector.dart';
-import 'package:my_employee_manager/features/home_page/presentation/cubit/home_page_cubit.dart';
-import 'package:my_employee_manager/features/home_page/presentation/cubit/home_page_state.dart';
+import 'package:my_employee_manager/features/home_page/presentation/cubit/home_page/home_page_cubit.dart';
+import 'package:my_employee_manager/features/home_page/presentation/cubit/home_page/home_page_state.dart';
 import 'package:my_employee_manager/features/home_page/presentation/widget/home_body_widget.dart';
 
 import '../../../core/presentation/widgets/app_dialogs_utils.dart';

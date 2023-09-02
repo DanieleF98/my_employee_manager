@@ -17,6 +17,7 @@ class BaseAppIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
+      splashRadius: AppConstants.defaultIconSize,
       iconSize: AppConstants.defaultIconSize,
       onPressed: onPressed,
       icon: Icon(

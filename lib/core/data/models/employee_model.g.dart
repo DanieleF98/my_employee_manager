@@ -33,7 +33,7 @@ Map<String, dynamic> _$$_EmployeeModelToJson(_$_EmployeeModel instance) =>
       'imagePath': instance.imagePath,
       'phoneNumber': instance.phoneNumber,
       'email': instance.email,
-      'workShifts': instance.workShifts,
+      'workShifts': instance.workShifts?.map((e) => e?.toJson()).toList(),
       'employmentDate': instance.employmentDate,
       'totalActiveNotifications': instance.totalActiveNotifications,
     };

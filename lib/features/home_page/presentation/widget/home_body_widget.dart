@@ -7,7 +7,7 @@ import 'package:my_employee_manager/core/domain/entities/employee_entity.dart';
 import 'package:my_employee_manager/core/presentation/widgets/base_app_icon_button.dart';
 import 'package:my_employee_manager/core/presentation/widgets/employee_card.dart';
 import 'package:my_employee_manager/di/app_injector.dart';
-import 'package:my_employee_manager/features/home_page/presentation/cubit/home_page_cubit.dart';
+import 'package:my_employee_manager/features/home_page/presentation/cubit/home_page/home_page_cubit.dart';
 
 class HomeBodyWidget extends StatelessWidget {
   final int selectedDay;

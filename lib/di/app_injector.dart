@@ -3,7 +3,8 @@ import 'package:my_employee_manager/core/data/data_sources/remote_data_sources/f
 import 'package:my_employee_manager/features/home_page/data/repository/home_page_repository_impl.dart';
 import 'package:my_employee_manager/features/home_page/domain/repository/home_page_repository.dart';
 import 'package:my_employee_manager/features/home_page/domain/use_cases/get_all_employees_use_case.dart';
-import 'package:my_employee_manager/features/home_page/presentation/cubit/home_page_cubit.dart';
+import 'package:my_employee_manager/features/home_page/presentation/cubit/home_page/home_page_cubit.dart';
+import 'package:my_employee_manager/features/home_page/presentation/cubit/home_page_search_employee/home_page_search_employee_cubit.dart';
 import 'package:my_employee_manager/features/login/data/repository/login_repository_impl.dart';
 import 'package:my_employee_manager/features/login/domain/repository/login_repository.dart';
 import 'package:my_employee_manager/features/login/domain/use_cases/login_use_case.dart';
@@ -67,5 +68,8 @@ void _setupCubits() {
     HomePageCubit(
       getAllEmployeesUseCase: appInjector.get<GetAllEmployeesUseCase>(),
     ),
+  );
+  appInjector.registerSingleton<HomePageSearchEmployeeCubit>(
+    HomePageSearchEmployeeCubit(),
   );
 }

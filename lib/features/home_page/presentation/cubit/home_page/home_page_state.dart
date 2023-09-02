@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../../../../core/domain/entities/employee_entity.dart';
+import 'package:my_employee_manager/core/domain/entities/employee_entity.dart';
 
 part 'home_page_state.freezed.dart';
 

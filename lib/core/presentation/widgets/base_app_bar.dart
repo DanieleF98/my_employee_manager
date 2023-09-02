@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_employee_manager/core/config/constants/app_constants.dart';
 import 'package:my_employee_manager/core/config/styles/app_styles.dart';
+import 'package:my_employee_manager/features/home_page/presentation/widget/home_page_bottom_sheet_search_widget.dart';
 
 import 'base_app_icon_button.dart';
 
@@ -29,15 +30,11 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: false,
       actions: [
         if (hasToShowSearch)
-          const Padding(
-            padding: EdgeInsets.only(
-              right: AppConstants.defaultPadding / 2,
-            ),
-            child: SizedBox(
-              width: AppConstants.defaultIconSize,
-              child: BaseAppIconButton(
-                iconData: Icons.search,
-              ),
+          BaseAppIconButton(
+            iconData: Icons.search,
+            onPressed: () => showBottomSheet(
+              context: context,
+              builder: (context) => const HomePageBottomSheetSearchWidget(),
             ),
           ),
         if (hasToShowProfile)
