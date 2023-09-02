@@ -4,18 +4,21 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_employee_manager/core/config/navigation/navigation_pages.dart';
 import 'package:my_employee_manager/core/config/utils/extensions/int_extensions.dart';
+import 'package:my_employee_manager/core/presentation/cubit/bottom_navigation_home_page_cubit.dart';
+import 'package:my_employee_manager/core/presentation/cubit/bottom_navigation_home_page_state.dart';
 import 'package:my_employee_manager/core/presentation/widgets/app_dialogs_utils.dart';
 import 'package:my_employee_manager/core/presentation/widgets/base_widget.dart';
 import 'package:my_employee_manager/di/app_injector.dart';
+import 'package:my_employee_manager/features/employee_shifts_calendar/presentation/employee_shifts_calendar_page.dart';
 import 'package:my_employee_manager/features/home_page/presentation/cubit/home_page/home_page_cubit.dart';
 import 'package:my_employee_manager/features/home_page/presentation/cubit/home_page_search_employee/home_page_search_employee_cubit.dart';
+import 'package:my_employee_manager/features/home_page/presentation/home_page.dart';
 import 'package:my_employee_manager/features/logout/presentation/cubit/logout_cubit.dart';
 import 'package:my_employee_manager/features/logout/presentation/cubit/logout_state.dart';
+import 'package:my_employee_manager/features/notification/presentation/notifications_page.dart';
 
 class MainContainerWithBottomNavigationWidget extends StatelessWidget {
-  final StatefulNavigationShell navigationShell;
   const MainContainerWithBottomNavigationWidget({
-    required this.navigationShell,
     super.key,
   });
 
@@ -32,6 +35,9 @@ class MainContainerWithBottomNavigationWidget extends StatelessWidget {
         ),
         BlocProvider<HomePageSearchEmployeeCubit>(
           create: (context) => appInjector.get<HomePageSearchEmployeeCubit>(),
+        ),
+        BlocProvider<BottomNavigationHomePageCubit>(
+          create: (context) => appInjector.get<BottomNavigationHomePageCubit>(),
         ),
       ],
       child: BlocListener<LogoutCubit, LogoutState>(
@@ -53,45 +59,61 @@ class MainContainerWithBottomNavigationWidget extends StatelessWidget {
             AppDialogsUtils.dismissSnackbar(context: context);
           });
         },
-        child: BaseWidget(
-          hasToShowProfile: true,
-          hasToShowSearch: navigationShell.currentIndex.isFirst,
-          bottomNavigationBar: BottomNavigationBar(
-              useLegacyColorScheme: false,
-              currentIndex: navigationShell.currentIndex,
-              onTap: (index) => _onTap(index, context),
-              items: [
-                BottomNavigationBarItem(
-                  icon: const Icon(
-                    Icons.home,
+        child: BlocBuilder<BottomNavigationHomePageCubit,
+            BottomNavigationHomePageState>(
+          builder: (context, state) => BaseWidget(
+            hasToShowProfile: true,
+            hasToShowSearch: state.index.isFirst,
+            bottomNavigationBar: BottomNavigationBar(
+                useLegacyColorScheme: false,
+                currentIndex: state.index,
+                onTap: (index) => _onTap(index, context),
+                items: [
+                  BottomNavigationBarItem(
+                    icon: const Icon(
+                      Icons.home,
+                    ),
+                    label: localizations.home,
                   ),
-                  label: localizations.home,
-                ),
-                BottomNavigationBarItem(
-                  icon: const Icon(
-                    Icons.calendar_today,
+                  BottomNavigationBarItem(
+                    icon: const Icon(
+                      Icons.calendar_today,
+                    ),
+                    label: localizations.calendar,
                   ),
-                  label: localizations.calendar,
-                ),
-                BottomNavigationBarItem(
-                  icon: const Icon(
-                    Icons.notifications,
+                  BottomNavigationBarItem(
+                    icon: const Icon(
+                      Icons.notifications,
+                    ),
+                    label: localizations.notifications,
                   ),
-                  label: localizations.notifications,
-                ),
-              ]),
-          child: navigationShell,
+                ]),
+            child: _getBodyWidget(index: state.index),
+          ),
         ),
       ),
     );
+  }
+
+  Widget _getBodyWidget({required int index}) {
+    switch (index) {
+      case 0:
+        return const HomePage();
+      case 1:
+        return const EmployeeShiftsCalendarPage();
+      case 2:
+        return const NotificationsPage();
+      default:
+        return const IgnorePointer();
+    }
   }
 
   void _onTap(index, context) {
     if (Navigator.canPop(context)) {
       Navigator.of(context).pop();
     }
-    navigationShell.goBranch(
-      index,
-    );
+    appInjector.get<BottomNavigationHomePageCubit>().changeIndex(
+          newIndex: index,
+        );
   }
 }

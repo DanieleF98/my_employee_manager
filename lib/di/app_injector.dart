@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:my_employee_manager/core/data/data_sources/remote_data_sources/firebase/firebase_remote_data_source.dart';
+import 'package:my_employee_manager/core/presentation/cubit/bottom_navigation_home_page_cubit.dart';
 import 'package:my_employee_manager/features/home_page/data/repository/home_page_repository_impl.dart';
 import 'package:my_employee_manager/features/home_page/domain/repository/home_page_repository.dart';
 import 'package:my_employee_manager/features/home_page/domain/use_cases/get_all_employees_use_case.dart';
@@ -90,5 +91,8 @@ void _setupCubits() {
   );
   appInjector.registerSingleton<HomePageSearchEmployeeCubit>(
     HomePageSearchEmployeeCubit(),
+  );
+  appInjector.registerSingleton<BottomNavigationHomePageCubit>(
+    BottomNavigationHomePageCubit(),
   );
 }

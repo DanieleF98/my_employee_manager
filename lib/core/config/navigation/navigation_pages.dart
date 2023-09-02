@@ -1,9 +1,7 @@
 enum NavigationPages {
   multiBlocProviderPage(value: '/'),
-  homePage(value: '/homePage'),
-  employeeDetailPage(value: 'employeeDetailPage'),
-  employeeShiftsCalendarPage(value: '/employeeShiftsCalendarPage'),
-  notificationsPage(value: '/notificationsPage');
+  bottomNavigationHomePage(value: '/bottomNavigationHomePage'),
+  employeeDetailPage(value: 'employeeDetailPage');
 
   final String value;
   const NavigationPages({
