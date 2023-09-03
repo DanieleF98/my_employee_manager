@@ -17,15 +17,18 @@ abstract class NavigationRoutes {
 
   static final List<RouteBase> _routes = [
     GoRoute(
+      name: NavigationPages.multiBlocProviderPage.value,
       path: NavigationPages.multiBlocProviderPage.value,
       builder: (context, state) => const AppMultiBlocProvider(),
     ),
     GoRoute(
+        name: NavigationPages.bottomNavigationHomePage.value,
         path: NavigationPages.bottomNavigationHomePage.value,
         builder: (context, state) =>
             const MainContainerWithBottomNavigationWidget(),
         routes: [
           GoRoute(
+            name: NavigationPages.employeeDetailPage.value,
             path: NavigationPages.employeeDetailPage.value,
             builder: (context, state) => const EmployeeDetailPage(),
           )
