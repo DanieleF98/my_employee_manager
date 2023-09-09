@@ -40,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
         state.maybeWhen(authorized: () {
           AppDialogsUtils.dismissSnackbar(context: context);
           context.goNamed(
-            NavigationPages.multiBlocProviderPage.value,
+            NavigationPages.bottomNavigationHomePage.value,
           );
         }, loading: () {
           AppDialogsUtils.dismissSnackbar(context: context);

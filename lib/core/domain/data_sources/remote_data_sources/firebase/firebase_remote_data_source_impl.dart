@@ -40,6 +40,13 @@ class FirebaseRemoteDataSourceImpl implements FirebaseRemoteDataSource {
     try {
       final collection = await db.collection(collectionName).get();
       return Right(collection.docs);
+    } on FirebaseException catch (firebaseException) {
+      return Left(
+        GenericFailureEntity.specificFailure(
+          message: firebaseException.message,
+          code: firebaseException.code,
+        ),
+      );
     } catch (e) {
       return Left(GenericFailureEntity.defaultFailure());
     }
@@ -52,6 +59,13 @@ class FirebaseRemoteDataSourceImpl implements FirebaseRemoteDataSource {
     try {
       await db.collection(collectionName).add(object);
       return const Right(true);
+    } on FirebaseException catch (firebaseException) {
+      return Left(
+        GenericFailureEntity.specificFailure(
+          message: firebaseException.message,
+          code: firebaseException.code,
+        ),
+      );
     } catch (e) {
       return Left(GenericFailureEntity.defaultFailure());
     }
