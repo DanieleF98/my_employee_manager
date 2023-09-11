@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:my_employee_manager/core/config/utils/extensions/employee_extensions.dart';
 import 'package:my_employee_manager/core/domain/entities/employee_entity.dart';
@@ -46,7 +47,21 @@ class HomePageCubit extends Cubit<HomePageState> {
     });
   }
 
-  void filterEmployeesByDay(int numberOfDays) => state.mapOrNull(
+  @visibleForTesting
+  void setupCubitForTest({
+    required List<EmployeeEntity> employeesList,
+    required List<EmployeeEntity> initialEmployeesList,
+  }) =>
+      emit(
+        HomePageState.loaded(
+          employeesList: employeesList,
+          initialEmployeesList: initialEmployeesList,
+          selectedDay: 0,
+          hasToPopLoader: true,
+        ),
+      );
+
+  void filterEmployeesByDay(int numberOfDays) => state.mapOrNull<void>(
         loaded: (loaded) {
           final List<EmployeeEntity> employeesWorkingInDay =
               loaded.initialEmployeesList
@@ -74,7 +89,6 @@ class HomePageCubit extends Cubit<HomePageState> {
               employeesList: employeesWorkingInDay,
             ),
           );
-          return null;
         },
       );
 }

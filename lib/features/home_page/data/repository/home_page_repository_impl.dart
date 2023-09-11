@@ -15,11 +15,12 @@ class HomePageRepositoryImpl implements HomePageRepository {
   final FirebaseRemoteDataSource firebaseRemoteDataSource;
 
   @override
-  Future<Either<GenericFailureEntity, List<EmployeeEntity>>>
-      getEmployees() async {
+  Future<Either<GenericFailureEntity, List<EmployeeEntity>>> getEmployees({
+    String collectionName = FirebaseConstants.employeesCollectionName,
+  }) async {
     try {
       final employeesCollection = await firebaseRemoteDataSource.getCollection(
-        collectionName: FirebaseConstants.employeesCollectionName,
+        collectionName: collectionName,
       );
       return employeesCollection.fold(
           (failure) => Left(
