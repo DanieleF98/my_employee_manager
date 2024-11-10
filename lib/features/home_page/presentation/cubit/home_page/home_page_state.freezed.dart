@@ -12,7 +12,7 @@ part of 'home_page_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$HomePageState {
@@ -99,28 +99,34 @@ class _$HomePageStateCopyWithImpl<$Res, $Val extends HomePageState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of HomePageState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$HomePageInitialStateCopyWith<$Res> {
-  factory _$$HomePageInitialStateCopyWith(_$HomePageInitialState value,
-          $Res Function(_$HomePageInitialState) then) =
-      __$$HomePageInitialStateCopyWithImpl<$Res>;
+abstract class _$$HomePageInitialStateImplCopyWith<$Res> {
+  factory _$$HomePageInitialStateImplCopyWith(_$HomePageInitialStateImpl value,
+          $Res Function(_$HomePageInitialStateImpl) then) =
+      __$$HomePageInitialStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$HomePageInitialStateCopyWithImpl<$Res>
-    extends _$HomePageStateCopyWithImpl<$Res, _$HomePageInitialState>
-    implements _$$HomePageInitialStateCopyWith<$Res> {
-  __$$HomePageInitialStateCopyWithImpl(_$HomePageInitialState _value,
-      $Res Function(_$HomePageInitialState) _then)
+class __$$HomePageInitialStateImplCopyWithImpl<$Res>
+    extends _$HomePageStateCopyWithImpl<$Res, _$HomePageInitialStateImpl>
+    implements _$$HomePageInitialStateImplCopyWith<$Res> {
+  __$$HomePageInitialStateImplCopyWithImpl(_$HomePageInitialStateImpl _value,
+      $Res Function(_$HomePageInitialStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of HomePageState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$HomePageInitialState implements HomePageInitialState {
-  const _$HomePageInitialState();
+class _$HomePageInitialStateImpl implements HomePageInitialState {
+  const _$HomePageInitialStateImpl();
 
   @override
   String toString() {
@@ -128,9 +134,10 @@ class _$HomePageInitialState implements HomePageInitialState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$HomePageInitialState);
+        (other.runtimeType == runtimeType &&
+            other is _$HomePageInitialStateImpl);
   }
 
   @override
@@ -227,29 +234,32 @@ class _$HomePageInitialState implements HomePageInitialState {
 }
 
 abstract class HomePageInitialState implements HomePageState {
-  const factory HomePageInitialState() = _$HomePageInitialState;
+  const factory HomePageInitialState() = _$HomePageInitialStateImpl;
 }
 
 /// @nodoc
-abstract class _$$HomePageLoadingStateCopyWith<$Res> {
-  factory _$$HomePageLoadingStateCopyWith(_$HomePageLoadingState value,
-          $Res Function(_$HomePageLoadingState) then) =
-      __$$HomePageLoadingStateCopyWithImpl<$Res>;
+abstract class _$$HomePageLoadingStateImplCopyWith<$Res> {
+  factory _$$HomePageLoadingStateImplCopyWith(_$HomePageLoadingStateImpl value,
+          $Res Function(_$HomePageLoadingStateImpl) then) =
+      __$$HomePageLoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$HomePageLoadingStateCopyWithImpl<$Res>
-    extends _$HomePageStateCopyWithImpl<$Res, _$HomePageLoadingState>
-    implements _$$HomePageLoadingStateCopyWith<$Res> {
-  __$$HomePageLoadingStateCopyWithImpl(_$HomePageLoadingState _value,
-      $Res Function(_$HomePageLoadingState) _then)
+class __$$HomePageLoadingStateImplCopyWithImpl<$Res>
+    extends _$HomePageStateCopyWithImpl<$Res, _$HomePageLoadingStateImpl>
+    implements _$$HomePageLoadingStateImplCopyWith<$Res> {
+  __$$HomePageLoadingStateImplCopyWithImpl(_$HomePageLoadingStateImpl _value,
+      $Res Function(_$HomePageLoadingStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of HomePageState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$HomePageLoadingState implements HomePageLoadingState {
-  const _$HomePageLoadingState();
+class _$HomePageLoadingStateImpl implements HomePageLoadingState {
+  const _$HomePageLoadingStateImpl();
 
   @override
   String toString() {
@@ -257,9 +267,10 @@ class _$HomePageLoadingState implements HomePageLoadingState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$HomePageLoadingState);
+        (other.runtimeType == runtimeType &&
+            other is _$HomePageLoadingStateImpl);
   }
 
   @override
@@ -356,14 +367,14 @@ class _$HomePageLoadingState implements HomePageLoadingState {
 }
 
 abstract class HomePageLoadingState implements HomePageState {
-  const factory HomePageLoadingState() = _$HomePageLoadingState;
+  const factory HomePageLoadingState() = _$HomePageLoadingStateImpl;
 }
 
 /// @nodoc
-abstract class _$$HomePageLoadedStateCopyWith<$Res> {
-  factory _$$HomePageLoadedStateCopyWith(_$HomePageLoadedState value,
-          $Res Function(_$HomePageLoadedState) then) =
-      __$$HomePageLoadedStateCopyWithImpl<$Res>;
+abstract class _$$HomePageLoadedStateImplCopyWith<$Res> {
+  factory _$$HomePageLoadedStateImplCopyWith(_$HomePageLoadedStateImpl value,
+          $Res Function(_$HomePageLoadedStateImpl) then) =
+      __$$HomePageLoadedStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {List<EmployeeEntity> employeesList,
@@ -373,13 +384,15 @@ abstract class _$$HomePageLoadedStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$HomePageLoadedStateCopyWithImpl<$Res>
-    extends _$HomePageStateCopyWithImpl<$Res, _$HomePageLoadedState>
-    implements _$$HomePageLoadedStateCopyWith<$Res> {
-  __$$HomePageLoadedStateCopyWithImpl(
-      _$HomePageLoadedState _value, $Res Function(_$HomePageLoadedState) _then)
+class __$$HomePageLoadedStateImplCopyWithImpl<$Res>
+    extends _$HomePageStateCopyWithImpl<$Res, _$HomePageLoadedStateImpl>
+    implements _$$HomePageLoadedStateImplCopyWith<$Res> {
+  __$$HomePageLoadedStateImplCopyWithImpl(_$HomePageLoadedStateImpl _value,
+      $Res Function(_$HomePageLoadedStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HomePageState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -388,7 +401,7 @@ class __$$HomePageLoadedStateCopyWithImpl<$Res>
     Object? selectedDay = null,
     Object? hasToPopLoader = null,
   }) {
-    return _then(_$HomePageLoadedState(
+    return _then(_$HomePageLoadedStateImpl(
       employeesList: null == employeesList
           ? _value._employeesList
           : employeesList // ignore: cast_nullable_to_non_nullable
@@ -411,8 +424,8 @@ class __$$HomePageLoadedStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HomePageLoadedState implements HomePageLoadedState {
-  const _$HomePageLoadedState(
+class _$HomePageLoadedStateImpl implements HomePageLoadedState {
+  const _$HomePageLoadedStateImpl(
       {required final List<EmployeeEntity> employeesList,
       required final List<EmployeeEntity> initialEmployeesList,
       required this.selectedDay,
@@ -448,10 +461,10 @@ class _$HomePageLoadedState implements HomePageLoadedState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HomePageLoadedState &&
+            other is _$HomePageLoadedStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._employeesList, _employeesList) &&
             const DeepCollectionEquality()
@@ -470,11 +483,13 @@ class _$HomePageLoadedState implements HomePageLoadedState {
       selectedDay,
       hasToPopLoader);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HomePageState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$HomePageLoadedStateCopyWith<_$HomePageLoadedState> get copyWith =>
-      __$$HomePageLoadedStateCopyWithImpl<_$HomePageLoadedState>(
+  _$$HomePageLoadedStateImplCopyWith<_$HomePageLoadedStateImpl> get copyWith =>
+      __$$HomePageLoadedStateImplCopyWithImpl<_$HomePageLoadedStateImpl>(
           this, _$identity);
 
   @override
@@ -575,37 +590,43 @@ abstract class HomePageLoadedState implements HomePageState {
       {required final List<EmployeeEntity> employeesList,
       required final List<EmployeeEntity> initialEmployeesList,
       required final int selectedDay,
-      required final bool hasToPopLoader}) = _$HomePageLoadedState;
+      required final bool hasToPopLoader}) = _$HomePageLoadedStateImpl;
 
   List<EmployeeEntity> get employeesList;
   List<EmployeeEntity> get initialEmployeesList;
   int get selectedDay;
   bool get hasToPopLoader;
-  @JsonKey(ignore: true)
-  _$$HomePageLoadedStateCopyWith<_$HomePageLoadedState> get copyWith =>
+
+  /// Create a copy of HomePageState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$HomePageLoadedStateImplCopyWith<_$HomePageLoadedStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$HomePageErrorStateCopyWith<$Res> {
-  factory _$$HomePageErrorStateCopyWith(_$HomePageErrorState value,
-          $Res Function(_$HomePageErrorState) then) =
-      __$$HomePageErrorStateCopyWithImpl<$Res>;
+abstract class _$$HomePageErrorStateImplCopyWith<$Res> {
+  factory _$$HomePageErrorStateImplCopyWith(_$HomePageErrorStateImpl value,
+          $Res Function(_$HomePageErrorStateImpl) then) =
+      __$$HomePageErrorStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$HomePageErrorStateCopyWithImpl<$Res>
-    extends _$HomePageStateCopyWithImpl<$Res, _$HomePageErrorState>
-    implements _$$HomePageErrorStateCopyWith<$Res> {
-  __$$HomePageErrorStateCopyWithImpl(
-      _$HomePageErrorState _value, $Res Function(_$HomePageErrorState) _then)
+class __$$HomePageErrorStateImplCopyWithImpl<$Res>
+    extends _$HomePageStateCopyWithImpl<$Res, _$HomePageErrorStateImpl>
+    implements _$$HomePageErrorStateImplCopyWith<$Res> {
+  __$$HomePageErrorStateImplCopyWithImpl(_$HomePageErrorStateImpl _value,
+      $Res Function(_$HomePageErrorStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of HomePageState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$HomePageErrorState implements HomePageErrorState {
-  const _$HomePageErrorState();
+class _$HomePageErrorStateImpl implements HomePageErrorState {
+  const _$HomePageErrorStateImpl();
 
   @override
   String toString() {
@@ -613,9 +634,9 @@ class _$HomePageErrorState implements HomePageErrorState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$HomePageErrorState);
+        (other.runtimeType == runtimeType && other is _$HomePageErrorStateImpl);
   }
 
   @override
@@ -712,5 +733,5 @@ class _$HomePageErrorState implements HomePageErrorState {
 }
 
 abstract class HomePageErrorState implements HomePageState {
-  const factory HomePageErrorState() = _$HomePageErrorState;
+  const factory HomePageErrorState() = _$HomePageErrorStateImpl;
 }

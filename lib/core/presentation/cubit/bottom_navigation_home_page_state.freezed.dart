@@ -12,7 +12,7 @@ part of 'bottom_navigation_home_page_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$BottomNavigationHomePageState {
@@ -51,7 +51,9 @@ mixin _$BottomNavigationHomePageState {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BottomNavigationHomePageState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BottomNavigationHomePageStateCopyWith<BottomNavigationHomePageState>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -78,6 +80,8 @@ class _$BottomNavigationHomePageStateCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BottomNavigationHomePageState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -93,33 +97,35 @@ class _$BottomNavigationHomePageStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$BottomNavigationHomePageInitialStateCopyWith<$Res>
+abstract class _$$BottomNavigationHomePageInitialStateImplCopyWith<$Res>
     implements $BottomNavigationHomePageStateCopyWith<$Res> {
-  factory _$$BottomNavigationHomePageInitialStateCopyWith(
-          _$BottomNavigationHomePageInitialState value,
-          $Res Function(_$BottomNavigationHomePageInitialState) then) =
-      __$$BottomNavigationHomePageInitialStateCopyWithImpl<$Res>;
+  factory _$$BottomNavigationHomePageInitialStateImplCopyWith(
+          _$BottomNavigationHomePageInitialStateImpl value,
+          $Res Function(_$BottomNavigationHomePageInitialStateImpl) then) =
+      __$$BottomNavigationHomePageInitialStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int index});
 }
 
 /// @nodoc
-class __$$BottomNavigationHomePageInitialStateCopyWithImpl<$Res>
+class __$$BottomNavigationHomePageInitialStateImplCopyWithImpl<$Res>
     extends _$BottomNavigationHomePageStateCopyWithImpl<$Res,
-        _$BottomNavigationHomePageInitialState>
-    implements _$$BottomNavigationHomePageInitialStateCopyWith<$Res> {
-  __$$BottomNavigationHomePageInitialStateCopyWithImpl(
-      _$BottomNavigationHomePageInitialState _value,
-      $Res Function(_$BottomNavigationHomePageInitialState) _then)
+        _$BottomNavigationHomePageInitialStateImpl>
+    implements _$$BottomNavigationHomePageInitialStateImplCopyWith<$Res> {
+  __$$BottomNavigationHomePageInitialStateImplCopyWithImpl(
+      _$BottomNavigationHomePageInitialStateImpl _value,
+      $Res Function(_$BottomNavigationHomePageInitialStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BottomNavigationHomePageState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? index = null,
   }) {
-    return _then(_$BottomNavigationHomePageInitialState(
+    return _then(_$BottomNavigationHomePageInitialStateImpl(
       index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
@@ -130,9 +136,9 @@ class __$$BottomNavigationHomePageInitialStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$BottomNavigationHomePageInitialState
+class _$BottomNavigationHomePageInitialStateImpl
     implements BottomNavigationHomePageInitialState {
-  const _$BottomNavigationHomePageInitialState({this.index = 0});
+  const _$BottomNavigationHomePageInitialStateImpl({this.index = 0});
 
   @override
   @JsonKey()
@@ -144,23 +150,25 @@ class _$BottomNavigationHomePageInitialState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BottomNavigationHomePageInitialState &&
+            other is _$BottomNavigationHomePageInitialStateImpl &&
             (identical(other.index, index) || other.index == index));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, index);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BottomNavigationHomePageState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$BottomNavigationHomePageInitialStateCopyWith<
-          _$BottomNavigationHomePageInitialState>
-      get copyWith => __$$BottomNavigationHomePageInitialStateCopyWithImpl<
-          _$BottomNavigationHomePageInitialState>(this, _$identity);
+  _$$BottomNavigationHomePageInitialStateImplCopyWith<
+          _$BottomNavigationHomePageInitialStateImpl>
+      get copyWith => __$$BottomNavigationHomePageInitialStateImplCopyWithImpl<
+          _$BottomNavigationHomePageInitialStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -223,13 +231,16 @@ class _$BottomNavigationHomePageInitialState
 abstract class BottomNavigationHomePageInitialState
     implements BottomNavigationHomePageState {
   const factory BottomNavigationHomePageInitialState({final int index}) =
-      _$BottomNavigationHomePageInitialState;
+      _$BottomNavigationHomePageInitialStateImpl;
 
   @override
   int get index;
+
+  /// Create a copy of BottomNavigationHomePageState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$BottomNavigationHomePageInitialStateCopyWith<
-          _$BottomNavigationHomePageInitialState>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BottomNavigationHomePageInitialStateImplCopyWith<
+          _$BottomNavigationHomePageInitialStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

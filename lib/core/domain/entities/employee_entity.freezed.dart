@@ -12,7 +12,7 @@ part of 'employee_entity.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$EmployeeEntity {
@@ -27,7 +27,9 @@ mixin _$EmployeeEntity {
   int get employmentDate => throw _privateConstructorUsedError;
   int get totalActiveNotifications => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EmployeeEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EmployeeEntityCopyWith<EmployeeEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -61,6 +63,8 @@ class _$EmployeeEntityCopyWithImpl<$Res, $Val extends EmployeeEntity>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of EmployeeEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -121,11 +125,11 @@ class _$EmployeeEntityCopyWithImpl<$Res, $Val extends EmployeeEntity>
 }
 
 /// @nodoc
-abstract class _$$_EmployeeEntityCopyWith<$Res>
+abstract class _$$EmployeeEntityImplCopyWith<$Res>
     implements $EmployeeEntityCopyWith<$Res> {
-  factory _$$_EmployeeEntityCopyWith(
-          _$_EmployeeEntity value, $Res Function(_$_EmployeeEntity) then) =
-      __$$_EmployeeEntityCopyWithImpl<$Res>;
+  factory _$$EmployeeEntityImplCopyWith(_$EmployeeEntityImpl value,
+          $Res Function(_$EmployeeEntityImpl) then) =
+      __$$EmployeeEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -142,13 +146,15 @@ abstract class _$$_EmployeeEntityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_EmployeeEntityCopyWithImpl<$Res>
-    extends _$EmployeeEntityCopyWithImpl<$Res, _$_EmployeeEntity>
-    implements _$$_EmployeeEntityCopyWith<$Res> {
-  __$$_EmployeeEntityCopyWithImpl(
-      _$_EmployeeEntity _value, $Res Function(_$_EmployeeEntity) _then)
+class __$$EmployeeEntityImplCopyWithImpl<$Res>
+    extends _$EmployeeEntityCopyWithImpl<$Res, _$EmployeeEntityImpl>
+    implements _$$EmployeeEntityImplCopyWith<$Res> {
+  __$$EmployeeEntityImplCopyWithImpl(
+      _$EmployeeEntityImpl _value, $Res Function(_$EmployeeEntityImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EmployeeEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -163,7 +169,7 @@ class __$$_EmployeeEntityCopyWithImpl<$Res>
     Object? employmentDate = null,
     Object? totalActiveNotifications = null,
   }) {
-    return _then(_$_EmployeeEntity(
+    return _then(_$EmployeeEntityImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -210,8 +216,8 @@ class __$$_EmployeeEntityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_EmployeeEntity implements _EmployeeEntity {
-  const _$_EmployeeEntity(
+class _$EmployeeEntityImpl implements _EmployeeEntity {
+  const _$EmployeeEntityImpl(
       {this.id = '',
       this.name = '',
       this.surname = '',
@@ -267,10 +273,10 @@ class _$_EmployeeEntity implements _EmployeeEntity {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EmployeeEntity &&
+            other is _$EmployeeEntityImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.surname, surname) || other.surname == surname) &&
@@ -303,11 +309,14 @@ class _$_EmployeeEntity implements _EmployeeEntity {
       employmentDate,
       totalActiveNotifications);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EmployeeEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EmployeeEntityCopyWith<_$_EmployeeEntity> get copyWith =>
-      __$$_EmployeeEntityCopyWithImpl<_$_EmployeeEntity>(this, _$identity);
+  _$$EmployeeEntityImplCopyWith<_$EmployeeEntityImpl> get copyWith =>
+      __$$EmployeeEntityImplCopyWithImpl<_$EmployeeEntityImpl>(
+          this, _$identity);
 }
 
 abstract class _EmployeeEntity implements EmployeeEntity {
@@ -321,7 +330,7 @@ abstract class _EmployeeEntity implements EmployeeEntity {
       final String email,
       final List<WorkShiftEntity> shifts,
       final int employmentDate,
-      final int totalActiveNotifications}) = _$_EmployeeEntity;
+      final int totalActiveNotifications}) = _$EmployeeEntityImpl;
 
   @override
   String get id;
@@ -343,8 +352,11 @@ abstract class _EmployeeEntity implements EmployeeEntity {
   int get employmentDate;
   @override
   int get totalActiveNotifications;
+
+  /// Create a copy of EmployeeEntity
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_EmployeeEntityCopyWith<_$_EmployeeEntity> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EmployeeEntityImplCopyWith<_$EmployeeEntityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

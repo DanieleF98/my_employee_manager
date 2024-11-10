@@ -12,7 +12,7 @@ part of 'employee_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 EmployeeModel _$EmployeeModelFromJson(Map<String, dynamic> json) {
   return _EmployeeModel.fromJson(json);
@@ -31,8 +31,12 @@ mixin _$EmployeeModel {
   int? get employmentDate => throw _privateConstructorUsedError;
   int? get totalActiveNotifications => throw _privateConstructorUsedError;
 
+  /// Serializes this EmployeeModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of EmployeeModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $EmployeeModelCopyWith<EmployeeModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -66,6 +70,8 @@ class _$EmployeeModelCopyWithImpl<$Res, $Val extends EmployeeModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of EmployeeModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -126,11 +132,11 @@ class _$EmployeeModelCopyWithImpl<$Res, $Val extends EmployeeModel>
 }
 
 /// @nodoc
-abstract class _$$_EmployeeModelCopyWith<$Res>
+abstract class _$$EmployeeModelImplCopyWith<$Res>
     implements $EmployeeModelCopyWith<$Res> {
-  factory _$$_EmployeeModelCopyWith(
-          _$_EmployeeModel value, $Res Function(_$_EmployeeModel) then) =
-      __$$_EmployeeModelCopyWithImpl<$Res>;
+  factory _$$EmployeeModelImplCopyWith(
+          _$EmployeeModelImpl value, $Res Function(_$EmployeeModelImpl) then) =
+      __$$EmployeeModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -147,13 +153,15 @@ abstract class _$$_EmployeeModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_EmployeeModelCopyWithImpl<$Res>
-    extends _$EmployeeModelCopyWithImpl<$Res, _$_EmployeeModel>
-    implements _$$_EmployeeModelCopyWith<$Res> {
-  __$$_EmployeeModelCopyWithImpl(
-      _$_EmployeeModel _value, $Res Function(_$_EmployeeModel) _then)
+class __$$EmployeeModelImplCopyWithImpl<$Res>
+    extends _$EmployeeModelCopyWithImpl<$Res, _$EmployeeModelImpl>
+    implements _$$EmployeeModelImplCopyWith<$Res> {
+  __$$EmployeeModelImplCopyWithImpl(
+      _$EmployeeModelImpl _value, $Res Function(_$EmployeeModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of EmployeeModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -168,7 +176,7 @@ class __$$_EmployeeModelCopyWithImpl<$Res>
     Object? employmentDate = freezed,
     Object? totalActiveNotifications = freezed,
   }) {
-    return _then(_$_EmployeeModel(
+    return _then(_$EmployeeModelImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -215,8 +223,8 @@ class __$$_EmployeeModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_EmployeeModel implements _EmployeeModel {
-  const _$_EmployeeModel(
+class _$EmployeeModelImpl implements _EmployeeModel {
+  const _$EmployeeModelImpl(
       {this.id,
       this.name,
       this.surname,
@@ -229,8 +237,8 @@ class _$_EmployeeModel implements _EmployeeModel {
       this.totalActiveNotifications})
       : _workShifts = workShifts;
 
-  factory _$_EmployeeModel.fromJson(Map<String, dynamic> json) =>
-      _$$_EmployeeModelFromJson(json);
+  factory _$EmployeeModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EmployeeModelImplFromJson(json);
 
   @override
   final String? id;
@@ -267,10 +275,10 @@ class _$_EmployeeModel implements _EmployeeModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EmployeeModel &&
+            other is _$EmployeeModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.surname, surname) || other.surname == surname) &&
@@ -290,7 +298,7 @@ class _$_EmployeeModel implements _EmployeeModel {
                 other.totalActiveNotifications == totalActiveNotifications));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -305,15 +313,17 @@ class _$_EmployeeModel implements _EmployeeModel {
       employmentDate,
       totalActiveNotifications);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of EmployeeModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EmployeeModelCopyWith<_$_EmployeeModel> get copyWith =>
-      __$$_EmployeeModelCopyWithImpl<_$_EmployeeModel>(this, _$identity);
+  _$$EmployeeModelImplCopyWith<_$EmployeeModelImpl> get copyWith =>
+      __$$EmployeeModelImplCopyWithImpl<_$EmployeeModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EmployeeModelToJson(
+    return _$$EmployeeModelImplToJson(
       this,
     );
   }
@@ -330,10 +340,10 @@ abstract class _EmployeeModel implements EmployeeModel {
       final String? email,
       final List<WorkShiftModel?>? workShifts,
       final int? employmentDate,
-      final int? totalActiveNotifications}) = _$_EmployeeModel;
+      final int? totalActiveNotifications}) = _$EmployeeModelImpl;
 
   factory _EmployeeModel.fromJson(Map<String, dynamic> json) =
-      _$_EmployeeModel.fromJson;
+      _$EmployeeModelImpl.fromJson;
 
   @override
   String? get id;
@@ -355,8 +365,11 @@ abstract class _EmployeeModel implements EmployeeModel {
   int? get employmentDate;
   @override
   int? get totalActiveNotifications;
+
+  /// Create a copy of EmployeeModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_EmployeeModelCopyWith<_$_EmployeeModel> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EmployeeModelImplCopyWith<_$EmployeeModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

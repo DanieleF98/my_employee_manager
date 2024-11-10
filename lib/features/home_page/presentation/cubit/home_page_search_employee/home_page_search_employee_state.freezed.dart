@@ -12,7 +12,7 @@ part of 'home_page_search_employee_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$HomePageSearchEmployeeState {
@@ -59,7 +59,9 @@ mixin _$HomePageSearchEmployeeState {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HomePageSearchEmployeeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $HomePageSearchEmployeeStateCopyWith<HomePageSearchEmployeeState>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -89,6 +91,8 @@ class _$HomePageSearchEmployeeStateCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of HomePageSearchEmployeeState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -114,12 +118,12 @@ class _$HomePageSearchEmployeeStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$HomePageSearchEmployeeSearchStateCopyWith<$Res>
+abstract class _$$HomePageSearchEmployeeSearchStateImplCopyWith<$Res>
     implements $HomePageSearchEmployeeStateCopyWith<$Res> {
-  factory _$$HomePageSearchEmployeeSearchStateCopyWith(
-          _$HomePageSearchEmployeeSearchState value,
-          $Res Function(_$HomePageSearchEmployeeSearchState) then) =
-      __$$HomePageSearchEmployeeSearchStateCopyWithImpl<$Res>;
+  factory _$$HomePageSearchEmployeeSearchStateImplCopyWith(
+          _$HomePageSearchEmployeeSearchStateImpl value,
+          $Res Function(_$HomePageSearchEmployeeSearchStateImpl) then) =
+      __$$HomePageSearchEmployeeSearchStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -129,15 +133,17 @@ abstract class _$$HomePageSearchEmployeeSearchStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$HomePageSearchEmployeeSearchStateCopyWithImpl<$Res>
+class __$$HomePageSearchEmployeeSearchStateImplCopyWithImpl<$Res>
     extends _$HomePageSearchEmployeeStateCopyWithImpl<$Res,
-        _$HomePageSearchEmployeeSearchState>
-    implements _$$HomePageSearchEmployeeSearchStateCopyWith<$Res> {
-  __$$HomePageSearchEmployeeSearchStateCopyWithImpl(
-      _$HomePageSearchEmployeeSearchState _value,
-      $Res Function(_$HomePageSearchEmployeeSearchState) _then)
+        _$HomePageSearchEmployeeSearchStateImpl>
+    implements _$$HomePageSearchEmployeeSearchStateImplCopyWith<$Res> {
+  __$$HomePageSearchEmployeeSearchStateImplCopyWithImpl(
+      _$HomePageSearchEmployeeSearchStateImpl _value,
+      $Res Function(_$HomePageSearchEmployeeSearchStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HomePageSearchEmployeeState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -145,7 +151,7 @@ class __$$HomePageSearchEmployeeSearchStateCopyWithImpl<$Res>
     Object? initialEmployeeList = null,
     Object? query = null,
   }) {
-    return _then(_$HomePageSearchEmployeeSearchState(
+    return _then(_$HomePageSearchEmployeeSearchStateImpl(
       employees: null == employees
           ? _value._employees
           : employees // ignore: cast_nullable_to_non_nullable
@@ -164,9 +170,9 @@ class __$$HomePageSearchEmployeeSearchStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HomePageSearchEmployeeSearchState
+class _$HomePageSearchEmployeeSearchStateImpl
     implements HomePageSearchEmployeeSearchState {
-  const _$HomePageSearchEmployeeSearchState(
+  const _$HomePageSearchEmployeeSearchStateImpl(
       {final List<EmployeeEntity> employees = const <EmployeeEntity>[],
       final List<EmployeeEntity> initialEmployeeList = const <EmployeeEntity>[],
       this.query = ''})
@@ -202,10 +208,10 @@ class _$HomePageSearchEmployeeSearchState
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HomePageSearchEmployeeSearchState &&
+            other is _$HomePageSearchEmployeeSearchStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._employees, _employees) &&
             const DeepCollectionEquality()
@@ -220,13 +226,15 @@ class _$HomePageSearchEmployeeSearchState
       const DeepCollectionEquality().hash(_initialEmployeeList),
       query);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HomePageSearchEmployeeState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$HomePageSearchEmployeeSearchStateCopyWith<
-          _$HomePageSearchEmployeeSearchState>
-      get copyWith => __$$HomePageSearchEmployeeSearchStateCopyWithImpl<
-          _$HomePageSearchEmployeeSearchState>(this, _$identity);
+  _$$HomePageSearchEmployeeSearchStateImplCopyWith<
+          _$HomePageSearchEmployeeSearchStateImpl>
+      get copyWith => __$$HomePageSearchEmployeeSearchStateImplCopyWithImpl<
+          _$HomePageSearchEmployeeSearchStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -296,7 +304,7 @@ abstract class HomePageSearchEmployeeSearchState
   const factory HomePageSearchEmployeeSearchState(
       {final List<EmployeeEntity> employees,
       final List<EmployeeEntity> initialEmployeeList,
-      final String query}) = _$HomePageSearchEmployeeSearchState;
+      final String query}) = _$HomePageSearchEmployeeSearchStateImpl;
 
   @override
   List<EmployeeEntity> get employees;
@@ -304,9 +312,12 @@ abstract class HomePageSearchEmployeeSearchState
   List<EmployeeEntity> get initialEmployeeList;
   @override
   String get query;
+
+  /// Create a copy of HomePageSearchEmployeeState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$HomePageSearchEmployeeSearchStateCopyWith<
-          _$HomePageSearchEmployeeSearchState>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$HomePageSearchEmployeeSearchStateImplCopyWith<
+          _$HomePageSearchEmployeeSearchStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

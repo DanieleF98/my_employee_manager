@@ -12,7 +12,7 @@ part of 'generic_failure_entity.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$GenericFailureEntity {
@@ -57,7 +57,9 @@ mixin _$GenericFailureEntity {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GenericFailureEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $GenericFailureEntityCopyWith<GenericFailureEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -82,6 +84,8 @@ class _$GenericFailureEntityCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of GenericFailureEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -97,31 +101,33 @@ class _$GenericFailureEntityCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$DefaultFailureEntityCopyWith<$Res>
+abstract class _$$DefaultFailureEntityImplCopyWith<$Res>
     implements $GenericFailureEntityCopyWith<$Res> {
-  factory _$$DefaultFailureEntityCopyWith(_$DefaultFailureEntity value,
-          $Res Function(_$DefaultFailureEntity) then) =
-      __$$DefaultFailureEntityCopyWithImpl<$Res>;
+  factory _$$DefaultFailureEntityImplCopyWith(_$DefaultFailureEntityImpl value,
+          $Res Function(_$DefaultFailureEntityImpl) then) =
+      __$$DefaultFailureEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int? code, String? message});
 }
 
 /// @nodoc
-class __$$DefaultFailureEntityCopyWithImpl<$Res>
-    extends _$GenericFailureEntityCopyWithImpl<$Res, _$DefaultFailureEntity>
-    implements _$$DefaultFailureEntityCopyWith<$Res> {
-  __$$DefaultFailureEntityCopyWithImpl(_$DefaultFailureEntity _value,
-      $Res Function(_$DefaultFailureEntity) _then)
+class __$$DefaultFailureEntityImplCopyWithImpl<$Res>
+    extends _$GenericFailureEntityCopyWithImpl<$Res, _$DefaultFailureEntityImpl>
+    implements _$$DefaultFailureEntityImplCopyWith<$Res> {
+  __$$DefaultFailureEntityImplCopyWithImpl(_$DefaultFailureEntityImpl _value,
+      $Res Function(_$DefaultFailureEntityImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GenericFailureEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? code = freezed,
     Object? message = freezed,
   }) {
-    return _then(_$DefaultFailureEntity(
+    return _then(_$DefaultFailureEntityImpl(
       code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -136,8 +142,8 @@ class __$$DefaultFailureEntityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DefaultFailureEntity implements DefaultFailureEntity {
-  _$DefaultFailureEntity({this.code, this.message});
+class _$DefaultFailureEntityImpl implements DefaultFailureEntity {
+  _$DefaultFailureEntityImpl({this.code, this.message});
 
   @override
   final int? code;
@@ -150,10 +156,10 @@ class _$DefaultFailureEntity implements DefaultFailureEntity {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DefaultFailureEntity &&
+            other is _$DefaultFailureEntityImpl &&
             (identical(other.code, code) || other.code == code) &&
             (identical(other.message, message) || other.message == message));
   }
@@ -161,12 +167,15 @@ class _$DefaultFailureEntity implements DefaultFailureEntity {
   @override
   int get hashCode => Object.hash(runtimeType, code, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GenericFailureEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$DefaultFailureEntityCopyWith<_$DefaultFailureEntity> get copyWith =>
-      __$$DefaultFailureEntityCopyWithImpl<_$DefaultFailureEntity>(
-          this, _$identity);
+  _$$DefaultFailureEntityImplCopyWith<_$DefaultFailureEntityImpl>
+      get copyWith =>
+          __$$DefaultFailureEntityImplCopyWithImpl<_$DefaultFailureEntityImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -233,44 +242,51 @@ class _$DefaultFailureEntity implements DefaultFailureEntity {
 
 abstract class DefaultFailureEntity implements GenericFailureEntity {
   factory DefaultFailureEntity({final int? code, final String? message}) =
-      _$DefaultFailureEntity;
+      _$DefaultFailureEntityImpl;
 
   @override
   int? get code;
   @override
   String? get message;
+
+  /// Create a copy of GenericFailureEntity
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$DefaultFailureEntityCopyWith<_$DefaultFailureEntity> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DefaultFailureEntityImplCopyWith<_$DefaultFailureEntityImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SpecificFailureEntityCopyWith<$Res>
+abstract class _$$SpecificFailureEntityImplCopyWith<$Res>
     implements $GenericFailureEntityCopyWith<$Res> {
-  factory _$$SpecificFailureEntityCopyWith(_$SpecificFailureEntity value,
-          $Res Function(_$SpecificFailureEntity) then) =
-      __$$SpecificFailureEntityCopyWithImpl<$Res>;
+  factory _$$SpecificFailureEntityImplCopyWith(
+          _$SpecificFailureEntityImpl value,
+          $Res Function(_$SpecificFailureEntityImpl) then) =
+      __$$SpecificFailureEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? code, String? message});
 }
 
 /// @nodoc
-class __$$SpecificFailureEntityCopyWithImpl<$Res>
-    extends _$GenericFailureEntityCopyWithImpl<$Res, _$SpecificFailureEntity>
-    implements _$$SpecificFailureEntityCopyWith<$Res> {
-  __$$SpecificFailureEntityCopyWithImpl(_$SpecificFailureEntity _value,
-      $Res Function(_$SpecificFailureEntity) _then)
+class __$$SpecificFailureEntityImplCopyWithImpl<$Res>
+    extends _$GenericFailureEntityCopyWithImpl<$Res,
+        _$SpecificFailureEntityImpl>
+    implements _$$SpecificFailureEntityImplCopyWith<$Res> {
+  __$$SpecificFailureEntityImplCopyWithImpl(_$SpecificFailureEntityImpl _value,
+      $Res Function(_$SpecificFailureEntityImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GenericFailureEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? code = freezed,
     Object? message = freezed,
   }) {
-    return _then(_$SpecificFailureEntity(
+    return _then(_$SpecificFailureEntityImpl(
       code: freezed == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -285,8 +301,8 @@ class __$$SpecificFailureEntityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SpecificFailureEntity implements SpecificFailureEntity {
-  _$SpecificFailureEntity({this.code, this.message});
+class _$SpecificFailureEntityImpl implements SpecificFailureEntity {
+  _$SpecificFailureEntityImpl({this.code, this.message});
 
   @override
   final String? code;
@@ -299,10 +315,10 @@ class _$SpecificFailureEntity implements SpecificFailureEntity {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SpecificFailureEntity &&
+            other is _$SpecificFailureEntityImpl &&
             (identical(other.code, code) || other.code == code) &&
             (identical(other.message, message) || other.message == message));
   }
@@ -310,12 +326,14 @@ class _$SpecificFailureEntity implements SpecificFailureEntity {
   @override
   int get hashCode => Object.hash(runtimeType, code, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GenericFailureEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SpecificFailureEntityCopyWith<_$SpecificFailureEntity> get copyWith =>
-      __$$SpecificFailureEntityCopyWithImpl<_$SpecificFailureEntity>(
-          this, _$identity);
+  _$$SpecificFailureEntityImplCopyWith<_$SpecificFailureEntityImpl>
+      get copyWith => __$$SpecificFailureEntityImplCopyWithImpl<
+          _$SpecificFailureEntityImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -382,14 +400,17 @@ class _$SpecificFailureEntity implements SpecificFailureEntity {
 
 abstract class SpecificFailureEntity implements GenericFailureEntity {
   factory SpecificFailureEntity({final String? code, final String? message}) =
-      _$SpecificFailureEntity;
+      _$SpecificFailureEntityImpl;
 
   @override
   String? get code;
   @override
   String? get message;
+
+  /// Create a copy of GenericFailureEntity
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$SpecificFailureEntityCopyWith<_$SpecificFailureEntity> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SpecificFailureEntityImplCopyWith<_$SpecificFailureEntityImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

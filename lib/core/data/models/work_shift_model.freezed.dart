@@ -12,7 +12,7 @@ part of 'work_shift_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 WorkShiftModel _$WorkShiftModelFromJson(Map<String, dynamic> json) {
   return _WorkShiftModel.fromJson(json);
@@ -24,8 +24,12 @@ mixin _$WorkShiftModel {
   int? get endTime => throw _privateConstructorUsedError;
   int? get totalWorkHour => throw _privateConstructorUsedError;
 
+  /// Serializes this WorkShiftModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of WorkShiftModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $WorkShiftModelCopyWith<WorkShiftModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$WorkShiftModelCopyWithImpl<$Res, $Val extends WorkShiftModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of WorkShiftModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -74,24 +80,26 @@ class _$WorkShiftModelCopyWithImpl<$Res, $Val extends WorkShiftModel>
 }
 
 /// @nodoc
-abstract class _$$_WorkShiftModelCopyWith<$Res>
+abstract class _$$WorkShiftModelImplCopyWith<$Res>
     implements $WorkShiftModelCopyWith<$Res> {
-  factory _$$_WorkShiftModelCopyWith(
-          _$_WorkShiftModel value, $Res Function(_$_WorkShiftModel) then) =
-      __$$_WorkShiftModelCopyWithImpl<$Res>;
+  factory _$$WorkShiftModelImplCopyWith(_$WorkShiftModelImpl value,
+          $Res Function(_$WorkShiftModelImpl) then) =
+      __$$WorkShiftModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int? startTime, int? endTime, int? totalWorkHour});
 }
 
 /// @nodoc
-class __$$_WorkShiftModelCopyWithImpl<$Res>
-    extends _$WorkShiftModelCopyWithImpl<$Res, _$_WorkShiftModel>
-    implements _$$_WorkShiftModelCopyWith<$Res> {
-  __$$_WorkShiftModelCopyWithImpl(
-      _$_WorkShiftModel _value, $Res Function(_$_WorkShiftModel) _then)
+class __$$WorkShiftModelImplCopyWithImpl<$Res>
+    extends _$WorkShiftModelCopyWithImpl<$Res, _$WorkShiftModelImpl>
+    implements _$$WorkShiftModelImplCopyWith<$Res> {
+  __$$WorkShiftModelImplCopyWithImpl(
+      _$WorkShiftModelImpl _value, $Res Function(_$WorkShiftModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of WorkShiftModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -99,7 +107,7 @@ class __$$_WorkShiftModelCopyWithImpl<$Res>
     Object? endTime = freezed,
     Object? totalWorkHour = freezed,
   }) {
-    return _then(_$_WorkShiftModel(
+    return _then(_$WorkShiftModelImpl(
       startTime: freezed == startTime
           ? _value.startTime
           : startTime // ignore: cast_nullable_to_non_nullable
@@ -118,11 +126,12 @@ class __$$_WorkShiftModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_WorkShiftModel implements _WorkShiftModel {
-  const _$_WorkShiftModel({this.startTime, this.endTime, this.totalWorkHour});
+class _$WorkShiftModelImpl implements _WorkShiftModel {
+  const _$WorkShiftModelImpl(
+      {this.startTime, this.endTime, this.totalWorkHour});
 
-  factory _$_WorkShiftModel.fromJson(Map<String, dynamic> json) =>
-      _$$_WorkShiftModelFromJson(json);
+  factory _$WorkShiftModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$WorkShiftModelImplFromJson(json);
 
   @override
   final int? startTime;
@@ -137,10 +146,10 @@ class _$_WorkShiftModel implements _WorkShiftModel {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_WorkShiftModel &&
+            other is _$WorkShiftModelImpl &&
             (identical(other.startTime, startTime) ||
                 other.startTime == startTime) &&
             (identical(other.endTime, endTime) || other.endTime == endTime) &&
@@ -148,20 +157,23 @@ class _$_WorkShiftModel implements _WorkShiftModel {
                 other.totalWorkHour == totalWorkHour));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, startTime, endTime, totalWorkHour);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of WorkShiftModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_WorkShiftModelCopyWith<_$_WorkShiftModel> get copyWith =>
-      __$$_WorkShiftModelCopyWithImpl<_$_WorkShiftModel>(this, _$identity);
+  _$$WorkShiftModelImplCopyWith<_$WorkShiftModelImpl> get copyWith =>
+      __$$WorkShiftModelImplCopyWithImpl<_$WorkShiftModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_WorkShiftModelToJson(
+    return _$$WorkShiftModelImplToJson(
       this,
     );
   }
@@ -171,10 +183,10 @@ abstract class _WorkShiftModel implements WorkShiftModel {
   const factory _WorkShiftModel(
       {final int? startTime,
       final int? endTime,
-      final int? totalWorkHour}) = _$_WorkShiftModel;
+      final int? totalWorkHour}) = _$WorkShiftModelImpl;
 
   factory _WorkShiftModel.fromJson(Map<String, dynamic> json) =
-      _$_WorkShiftModel.fromJson;
+      _$WorkShiftModelImpl.fromJson;
 
   @override
   int? get startTime;
@@ -182,8 +194,11 @@ abstract class _WorkShiftModel implements WorkShiftModel {
   int? get endTime;
   @override
   int? get totalWorkHour;
+
+  /// Create a copy of WorkShiftModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_WorkShiftModelCopyWith<_$_WorkShiftModel> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$WorkShiftModelImplCopyWith<_$WorkShiftModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

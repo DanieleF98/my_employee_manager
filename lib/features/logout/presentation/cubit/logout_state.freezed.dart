@@ -12,7 +12,7 @@ part of 'logout_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$LogoutState {
@@ -84,28 +84,34 @@ class _$LogoutStateCopyWithImpl<$Res, $Val extends LogoutState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of LogoutState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$LogoutInitialStateCopyWith<$Res> {
-  factory _$$LogoutInitialStateCopyWith(_$LogoutInitialState value,
-          $Res Function(_$LogoutInitialState) then) =
-      __$$LogoutInitialStateCopyWithImpl<$Res>;
+abstract class _$$LogoutInitialStateImplCopyWith<$Res> {
+  factory _$$LogoutInitialStateImplCopyWith(_$LogoutInitialStateImpl value,
+          $Res Function(_$LogoutInitialStateImpl) then) =
+      __$$LogoutInitialStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LogoutInitialStateCopyWithImpl<$Res>
-    extends _$LogoutStateCopyWithImpl<$Res, _$LogoutInitialState>
-    implements _$$LogoutInitialStateCopyWith<$Res> {
-  __$$LogoutInitialStateCopyWithImpl(
-      _$LogoutInitialState _value, $Res Function(_$LogoutInitialState) _then)
+class __$$LogoutInitialStateImplCopyWithImpl<$Res>
+    extends _$LogoutStateCopyWithImpl<$Res, _$LogoutInitialStateImpl>
+    implements _$$LogoutInitialStateImplCopyWith<$Res> {
+  __$$LogoutInitialStateImplCopyWithImpl(_$LogoutInitialStateImpl _value,
+      $Res Function(_$LogoutInitialStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of LogoutState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$LogoutInitialState implements LogoutInitialState {
-  _$LogoutInitialState();
+class _$LogoutInitialStateImpl implements LogoutInitialState {
+  _$LogoutInitialStateImpl();
 
   @override
   String toString() {
@@ -113,9 +119,9 @@ class _$LogoutInitialState implements LogoutInitialState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LogoutInitialState);
+        (other.runtimeType == runtimeType && other is _$LogoutInitialStateImpl);
   }
 
   @override
@@ -197,29 +203,32 @@ class _$LogoutInitialState implements LogoutInitialState {
 }
 
 abstract class LogoutInitialState implements LogoutState {
-  factory LogoutInitialState() = _$LogoutInitialState;
+  factory LogoutInitialState() = _$LogoutInitialStateImpl;
 }
 
 /// @nodoc
-abstract class _$$LogoutLoadingStateCopyWith<$Res> {
-  factory _$$LogoutLoadingStateCopyWith(_$LogoutLoadingState value,
-          $Res Function(_$LogoutLoadingState) then) =
-      __$$LogoutLoadingStateCopyWithImpl<$Res>;
+abstract class _$$LogoutLoadingStateImplCopyWith<$Res> {
+  factory _$$LogoutLoadingStateImplCopyWith(_$LogoutLoadingStateImpl value,
+          $Res Function(_$LogoutLoadingStateImpl) then) =
+      __$$LogoutLoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LogoutLoadingStateCopyWithImpl<$Res>
-    extends _$LogoutStateCopyWithImpl<$Res, _$LogoutLoadingState>
-    implements _$$LogoutLoadingStateCopyWith<$Res> {
-  __$$LogoutLoadingStateCopyWithImpl(
-      _$LogoutLoadingState _value, $Res Function(_$LogoutLoadingState) _then)
+class __$$LogoutLoadingStateImplCopyWithImpl<$Res>
+    extends _$LogoutStateCopyWithImpl<$Res, _$LogoutLoadingStateImpl>
+    implements _$$LogoutLoadingStateImplCopyWith<$Res> {
+  __$$LogoutLoadingStateImplCopyWithImpl(_$LogoutLoadingStateImpl _value,
+      $Res Function(_$LogoutLoadingStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of LogoutState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$LogoutLoadingState implements LogoutLoadingState {
-  _$LogoutLoadingState();
+class _$LogoutLoadingStateImpl implements LogoutLoadingState {
+  _$LogoutLoadingStateImpl();
 
   @override
   String toString() {
@@ -227,9 +236,9 @@ class _$LogoutLoadingState implements LogoutLoadingState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LogoutLoadingState);
+        (other.runtimeType == runtimeType && other is _$LogoutLoadingStateImpl);
   }
 
   @override
@@ -311,32 +320,34 @@ class _$LogoutLoadingState implements LogoutLoadingState {
 }
 
 abstract class LogoutLoadingState implements LogoutState {
-  factory LogoutLoadingState() = _$LogoutLoadingState;
+  factory LogoutLoadingState() = _$LogoutLoadingStateImpl;
 }
 
 /// @nodoc
-abstract class _$$LogoutErrorStateCopyWith<$Res> {
-  factory _$$LogoutErrorStateCopyWith(
-          _$LogoutErrorState value, $Res Function(_$LogoutErrorState) then) =
-      __$$LogoutErrorStateCopyWithImpl<$Res>;
+abstract class _$$LogoutErrorStateImplCopyWith<$Res> {
+  factory _$$LogoutErrorStateImplCopyWith(_$LogoutErrorStateImpl value,
+          $Res Function(_$LogoutErrorStateImpl) then) =
+      __$$LogoutErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? message});
 }
 
 /// @nodoc
-class __$$LogoutErrorStateCopyWithImpl<$Res>
-    extends _$LogoutStateCopyWithImpl<$Res, _$LogoutErrorState>
-    implements _$$LogoutErrorStateCopyWith<$Res> {
-  __$$LogoutErrorStateCopyWithImpl(
-      _$LogoutErrorState _value, $Res Function(_$LogoutErrorState) _then)
+class __$$LogoutErrorStateImplCopyWithImpl<$Res>
+    extends _$LogoutStateCopyWithImpl<$Res, _$LogoutErrorStateImpl>
+    implements _$$LogoutErrorStateImplCopyWith<$Res> {
+  __$$LogoutErrorStateImplCopyWithImpl(_$LogoutErrorStateImpl _value,
+      $Res Function(_$LogoutErrorStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LogoutState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_$LogoutErrorState(
+    return _then(_$LogoutErrorStateImpl(
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -347,8 +358,8 @@ class __$$LogoutErrorStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LogoutErrorState implements LogoutErrorState {
-  _$LogoutErrorState({this.message});
+class _$LogoutErrorStateImpl implements LogoutErrorState {
+  _$LogoutErrorStateImpl({this.message});
 
   @override
   final String? message;
@@ -359,21 +370,24 @@ class _$LogoutErrorState implements LogoutErrorState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LogoutErrorState &&
+            other is _$LogoutErrorStateImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LogoutState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LogoutErrorStateCopyWith<_$LogoutErrorState> get copyWith =>
-      __$$LogoutErrorStateCopyWithImpl<_$LogoutErrorState>(this, _$identity);
+  _$$LogoutErrorStateImplCopyWith<_$LogoutErrorStateImpl> get copyWith =>
+      __$$LogoutErrorStateImplCopyWithImpl<_$LogoutErrorStateImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -451,34 +465,40 @@ class _$LogoutErrorState implements LogoutErrorState {
 }
 
 abstract class LogoutErrorState implements LogoutState {
-  factory LogoutErrorState({final String? message}) = _$LogoutErrorState;
+  factory LogoutErrorState({final String? message}) = _$LogoutErrorStateImpl;
 
   String? get message;
-  @JsonKey(ignore: true)
-  _$$LogoutErrorStateCopyWith<_$LogoutErrorState> get copyWith =>
+
+  /// Create a copy of LogoutState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LogoutErrorStateImplCopyWith<_$LogoutErrorStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LogoutSuccessStateCopyWith<$Res> {
-  factory _$$LogoutSuccessStateCopyWith(_$LogoutSuccessState value,
-          $Res Function(_$LogoutSuccessState) then) =
-      __$$LogoutSuccessStateCopyWithImpl<$Res>;
+abstract class _$$LogoutSuccessStateImplCopyWith<$Res> {
+  factory _$$LogoutSuccessStateImplCopyWith(_$LogoutSuccessStateImpl value,
+          $Res Function(_$LogoutSuccessStateImpl) then) =
+      __$$LogoutSuccessStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LogoutSuccessStateCopyWithImpl<$Res>
-    extends _$LogoutStateCopyWithImpl<$Res, _$LogoutSuccessState>
-    implements _$$LogoutSuccessStateCopyWith<$Res> {
-  __$$LogoutSuccessStateCopyWithImpl(
-      _$LogoutSuccessState _value, $Res Function(_$LogoutSuccessState) _then)
+class __$$LogoutSuccessStateImplCopyWithImpl<$Res>
+    extends _$LogoutStateCopyWithImpl<$Res, _$LogoutSuccessStateImpl>
+    implements _$$LogoutSuccessStateImplCopyWith<$Res> {
+  __$$LogoutSuccessStateImplCopyWithImpl(_$LogoutSuccessStateImpl _value,
+      $Res Function(_$LogoutSuccessStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of LogoutState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$LogoutSuccessState implements LogoutSuccessState {
-  _$LogoutSuccessState();
+class _$LogoutSuccessStateImpl implements LogoutSuccessState {
+  _$LogoutSuccessStateImpl();
 
   @override
   String toString() {
@@ -486,9 +506,9 @@ class _$LogoutSuccessState implements LogoutSuccessState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LogoutSuccessState);
+        (other.runtimeType == runtimeType && other is _$LogoutSuccessStateImpl);
   }
 
   @override
@@ -570,5 +590,5 @@ class _$LogoutSuccessState implements LogoutSuccessState {
 }
 
 abstract class LogoutSuccessState implements LogoutState {
-  factory LogoutSuccessState() = _$LogoutSuccessState;
+  factory LogoutSuccessState() = _$LogoutSuccessStateImpl;
 }

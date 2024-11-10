@@ -12,7 +12,7 @@ part of 'work_shift_entity.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$WorkShiftEntity {
@@ -20,7 +20,9 @@ mixin _$WorkShiftEntity {
   DateTime get endTime => throw _privateConstructorUsedError;
   int get totalWorkHour => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of WorkShiftEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $WorkShiftEntityCopyWith<WorkShiftEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -44,6 +46,8 @@ class _$WorkShiftEntityCopyWithImpl<$Res, $Val extends WorkShiftEntity>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of WorkShiftEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -69,24 +73,26 @@ class _$WorkShiftEntityCopyWithImpl<$Res, $Val extends WorkShiftEntity>
 }
 
 /// @nodoc
-abstract class _$$_WorkShiftEntityCopyWith<$Res>
+abstract class _$$WorkShiftEntityImplCopyWith<$Res>
     implements $WorkShiftEntityCopyWith<$Res> {
-  factory _$$_WorkShiftEntityCopyWith(
-          _$_WorkShiftEntity value, $Res Function(_$_WorkShiftEntity) then) =
-      __$$_WorkShiftEntityCopyWithImpl<$Res>;
+  factory _$$WorkShiftEntityImplCopyWith(_$WorkShiftEntityImpl value,
+          $Res Function(_$WorkShiftEntityImpl) then) =
+      __$$WorkShiftEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({DateTime startTime, DateTime endTime, int totalWorkHour});
 }
 
 /// @nodoc
-class __$$_WorkShiftEntityCopyWithImpl<$Res>
-    extends _$WorkShiftEntityCopyWithImpl<$Res, _$_WorkShiftEntity>
-    implements _$$_WorkShiftEntityCopyWith<$Res> {
-  __$$_WorkShiftEntityCopyWithImpl(
-      _$_WorkShiftEntity _value, $Res Function(_$_WorkShiftEntity) _then)
+class __$$WorkShiftEntityImplCopyWithImpl<$Res>
+    extends _$WorkShiftEntityCopyWithImpl<$Res, _$WorkShiftEntityImpl>
+    implements _$$WorkShiftEntityImplCopyWith<$Res> {
+  __$$WorkShiftEntityImplCopyWithImpl(
+      _$WorkShiftEntityImpl _value, $Res Function(_$WorkShiftEntityImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of WorkShiftEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -94,7 +100,7 @@ class __$$_WorkShiftEntityCopyWithImpl<$Res>
     Object? endTime = null,
     Object? totalWorkHour = null,
   }) {
-    return _then(_$_WorkShiftEntity(
+    return _then(_$WorkShiftEntityImpl(
       startTime: null == startTime
           ? _value.startTime
           : startTime // ignore: cast_nullable_to_non_nullable
@@ -113,8 +119,8 @@ class __$$_WorkShiftEntityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_WorkShiftEntity implements _WorkShiftEntity {
-  const _$_WorkShiftEntity(
+class _$WorkShiftEntityImpl implements _WorkShiftEntity {
+  const _$WorkShiftEntityImpl(
       {required this.startTime, required this.endTime, this.totalWorkHour = 0});
 
   @override
@@ -131,10 +137,10 @@ class _$_WorkShiftEntity implements _WorkShiftEntity {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_WorkShiftEntity &&
+            other is _$WorkShiftEntityImpl &&
             (identical(other.startTime, startTime) ||
                 other.startTime == startTime) &&
             (identical(other.endTime, endTime) || other.endTime == endTime) &&
@@ -146,18 +152,21 @@ class _$_WorkShiftEntity implements _WorkShiftEntity {
   int get hashCode =>
       Object.hash(runtimeType, startTime, endTime, totalWorkHour);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of WorkShiftEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_WorkShiftEntityCopyWith<_$_WorkShiftEntity> get copyWith =>
-      __$$_WorkShiftEntityCopyWithImpl<_$_WorkShiftEntity>(this, _$identity);
+  _$$WorkShiftEntityImplCopyWith<_$WorkShiftEntityImpl> get copyWith =>
+      __$$WorkShiftEntityImplCopyWithImpl<_$WorkShiftEntityImpl>(
+          this, _$identity);
 }
 
 abstract class _WorkShiftEntity implements WorkShiftEntity {
   const factory _WorkShiftEntity(
       {required final DateTime startTime,
       required final DateTime endTime,
-      final int totalWorkHour}) = _$_WorkShiftEntity;
+      final int totalWorkHour}) = _$WorkShiftEntityImpl;
 
   @override
   DateTime get startTime;
@@ -165,8 +174,11 @@ abstract class _WorkShiftEntity implements WorkShiftEntity {
   DateTime get endTime;
   @override
   int get totalWorkHour;
+
+  /// Create a copy of WorkShiftEntity
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_WorkShiftEntityCopyWith<_$_WorkShiftEntity> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$WorkShiftEntityImplCopyWith<_$WorkShiftEntityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,7 +12,7 @@ part of 'login_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$LoginState {
@@ -84,28 +84,36 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$LoginUnauthorizedStateCopyWith<$Res> {
-  factory _$$LoginUnauthorizedStateCopyWith(_$LoginUnauthorizedState value,
-          $Res Function(_$LoginUnauthorizedState) then) =
-      __$$LoginUnauthorizedStateCopyWithImpl<$Res>;
+abstract class _$$LoginUnauthorizedStateImplCopyWith<$Res> {
+  factory _$$LoginUnauthorizedStateImplCopyWith(
+          _$LoginUnauthorizedStateImpl value,
+          $Res Function(_$LoginUnauthorizedStateImpl) then) =
+      __$$LoginUnauthorizedStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoginUnauthorizedStateCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$LoginUnauthorizedState>
-    implements _$$LoginUnauthorizedStateCopyWith<$Res> {
-  __$$LoginUnauthorizedStateCopyWithImpl(_$LoginUnauthorizedState _value,
-      $Res Function(_$LoginUnauthorizedState) _then)
+class __$$LoginUnauthorizedStateImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$LoginUnauthorizedStateImpl>
+    implements _$$LoginUnauthorizedStateImplCopyWith<$Res> {
+  __$$LoginUnauthorizedStateImplCopyWithImpl(
+      _$LoginUnauthorizedStateImpl _value,
+      $Res Function(_$LoginUnauthorizedStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$LoginUnauthorizedState implements LoginUnauthorizedState {
-  _$LoginUnauthorizedState();
+class _$LoginUnauthorizedStateImpl implements LoginUnauthorizedState {
+  _$LoginUnauthorizedStateImpl();
 
   @override
   String toString() {
@@ -113,9 +121,10 @@ class _$LoginUnauthorizedState implements LoginUnauthorizedState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoginUnauthorizedState);
+        (other.runtimeType == runtimeType &&
+            other is _$LoginUnauthorizedStateImpl);
   }
 
   @override
@@ -197,29 +206,32 @@ class _$LoginUnauthorizedState implements LoginUnauthorizedState {
 }
 
 abstract class LoginUnauthorizedState implements LoginState {
-  factory LoginUnauthorizedState() = _$LoginUnauthorizedState;
+  factory LoginUnauthorizedState() = _$LoginUnauthorizedStateImpl;
 }
 
 /// @nodoc
-abstract class _$$LoginLoadingStateCopyWith<$Res> {
-  factory _$$LoginLoadingStateCopyWith(
-          _$LoginLoadingState value, $Res Function(_$LoginLoadingState) then) =
-      __$$LoginLoadingStateCopyWithImpl<$Res>;
+abstract class _$$LoginLoadingStateImplCopyWith<$Res> {
+  factory _$$LoginLoadingStateImplCopyWith(_$LoginLoadingStateImpl value,
+          $Res Function(_$LoginLoadingStateImpl) then) =
+      __$$LoginLoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoginLoadingStateCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$LoginLoadingState>
-    implements _$$LoginLoadingStateCopyWith<$Res> {
-  __$$LoginLoadingStateCopyWithImpl(
-      _$LoginLoadingState _value, $Res Function(_$LoginLoadingState) _then)
+class __$$LoginLoadingStateImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$LoginLoadingStateImpl>
+    implements _$$LoginLoadingStateImplCopyWith<$Res> {
+  __$$LoginLoadingStateImplCopyWithImpl(_$LoginLoadingStateImpl _value,
+      $Res Function(_$LoginLoadingStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$LoginLoadingState implements LoginLoadingState {
-  _$LoginLoadingState();
+class _$LoginLoadingStateImpl implements LoginLoadingState {
+  _$LoginLoadingStateImpl();
 
   @override
   String toString() {
@@ -227,9 +239,9 @@ class _$LoginLoadingState implements LoginLoadingState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoginLoadingState);
+        (other.runtimeType == runtimeType && other is _$LoginLoadingStateImpl);
   }
 
   @override
@@ -311,32 +323,34 @@ class _$LoginLoadingState implements LoginLoadingState {
 }
 
 abstract class LoginLoadingState implements LoginState {
-  factory LoginLoadingState() = _$LoginLoadingState;
+  factory LoginLoadingState() = _$LoginLoadingStateImpl;
 }
 
 /// @nodoc
-abstract class _$$LoginErrorStateCopyWith<$Res> {
-  factory _$$LoginErrorStateCopyWith(
-          _$LoginErrorState value, $Res Function(_$LoginErrorState) then) =
-      __$$LoginErrorStateCopyWithImpl<$Res>;
+abstract class _$$LoginErrorStateImplCopyWith<$Res> {
+  factory _$$LoginErrorStateImplCopyWith(_$LoginErrorStateImpl value,
+          $Res Function(_$LoginErrorStateImpl) then) =
+      __$$LoginErrorStateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? message});
 }
 
 /// @nodoc
-class __$$LoginErrorStateCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$LoginErrorState>
-    implements _$$LoginErrorStateCopyWith<$Res> {
-  __$$LoginErrorStateCopyWithImpl(
-      _$LoginErrorState _value, $Res Function(_$LoginErrorState) _then)
+class __$$LoginErrorStateImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$LoginErrorStateImpl>
+    implements _$$LoginErrorStateImplCopyWith<$Res> {
+  __$$LoginErrorStateImplCopyWithImpl(
+      _$LoginErrorStateImpl _value, $Res Function(_$LoginErrorStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_$LoginErrorState(
+    return _then(_$LoginErrorStateImpl(
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -347,8 +361,8 @@ class __$$LoginErrorStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoginErrorState implements LoginErrorState {
-  _$LoginErrorState({this.message});
+class _$LoginErrorStateImpl implements LoginErrorState {
+  _$LoginErrorStateImpl({this.message});
 
   @override
   final String? message;
@@ -359,21 +373,24 @@ class _$LoginErrorState implements LoginErrorState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoginErrorState &&
+            other is _$LoginErrorStateImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoginErrorStateCopyWith<_$LoginErrorState> get copyWith =>
-      __$$LoginErrorStateCopyWithImpl<_$LoginErrorState>(this, _$identity);
+  _$$LoginErrorStateImplCopyWith<_$LoginErrorStateImpl> get copyWith =>
+      __$$LoginErrorStateImplCopyWithImpl<_$LoginErrorStateImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -451,34 +468,40 @@ class _$LoginErrorState implements LoginErrorState {
 }
 
 abstract class LoginErrorState implements LoginState {
-  factory LoginErrorState({final String? message}) = _$LoginErrorState;
+  factory LoginErrorState({final String? message}) = _$LoginErrorStateImpl;
 
   String? get message;
-  @JsonKey(ignore: true)
-  _$$LoginErrorStateCopyWith<_$LoginErrorState> get copyWith =>
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoginErrorStateImplCopyWith<_$LoginErrorStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LoginAuthorizedStateCopyWith<$Res> {
-  factory _$$LoginAuthorizedStateCopyWith(_$LoginAuthorizedState value,
-          $Res Function(_$LoginAuthorizedState) then) =
-      __$$LoginAuthorizedStateCopyWithImpl<$Res>;
+abstract class _$$LoginAuthorizedStateImplCopyWith<$Res> {
+  factory _$$LoginAuthorizedStateImplCopyWith(_$LoginAuthorizedStateImpl value,
+          $Res Function(_$LoginAuthorizedStateImpl) then) =
+      __$$LoginAuthorizedStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoginAuthorizedStateCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$LoginAuthorizedState>
-    implements _$$LoginAuthorizedStateCopyWith<$Res> {
-  __$$LoginAuthorizedStateCopyWithImpl(_$LoginAuthorizedState _value,
-      $Res Function(_$LoginAuthorizedState) _then)
+class __$$LoginAuthorizedStateImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$LoginAuthorizedStateImpl>
+    implements _$$LoginAuthorizedStateImplCopyWith<$Res> {
+  __$$LoginAuthorizedStateImplCopyWithImpl(_$LoginAuthorizedStateImpl _value,
+      $Res Function(_$LoginAuthorizedStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of LoginState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$LoginAuthorizedState implements LoginAuthorizedState {
-  _$LoginAuthorizedState();
+class _$LoginAuthorizedStateImpl implements LoginAuthorizedState {
+  _$LoginAuthorizedStateImpl();
 
   @override
   String toString() {
@@ -486,9 +509,10 @@ class _$LoginAuthorizedState implements LoginAuthorizedState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoginAuthorizedState);
+        (other.runtimeType == runtimeType &&
+            other is _$LoginAuthorizedStateImpl);
   }
 
   @override
@@ -570,5 +594,5 @@ class _$LoginAuthorizedState implements LoginAuthorizedState {
 }
 
 abstract class LoginAuthorizedState implements LoginState {
-  factory LoginAuthorizedState() = _$LoginAuthorizedState;
+  factory LoginAuthorizedState() = _$LoginAuthorizedStateImpl;
 }

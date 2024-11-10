@@ -6,14 +6,15 @@ part of 'work_shift_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_WorkShiftModel _$$_WorkShiftModelFromJson(Map<String, dynamic> json) =>
-    _$_WorkShiftModel(
-      startTime: json['startTime'] as int?,
-      endTime: json['endTime'] as int?,
-      totalWorkHour: json['totalWorkHour'] as int?,
+_$WorkShiftModelImpl _$$WorkShiftModelImplFromJson(Map<String, dynamic> json) =>
+    _$WorkShiftModelImpl(
+      startTime: (json['startTime'] as num?)?.toInt(),
+      endTime: (json['endTime'] as num?)?.toInt(),
+      totalWorkHour: (json['totalWorkHour'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$_WorkShiftModelToJson(_$_WorkShiftModel instance) =>
+Map<String, dynamic> _$$WorkShiftModelImplToJson(
+        _$WorkShiftModelImpl instance) =>
     <String, dynamic>{
       'startTime': instance.startTime,
       'endTime': instance.endTime,
