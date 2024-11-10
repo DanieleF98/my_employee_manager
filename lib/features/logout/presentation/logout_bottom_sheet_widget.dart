@@ -55,14 +55,14 @@ class LogoutBottomSheetWidget extends StatelessWidget {
               ),
               child: ElevatedButton(
                   style: const ButtonStyle(
-                    minimumSize: MaterialStatePropertyAll(
+                    minimumSize: WidgetStatePropertyAll(
                       Size(
                         _kDefaultElevatedButtonHeigth * 5,
                         _kDefaultElevatedButtonHeigth,
                       ),
                     ),
                     backgroundColor:
-                        MaterialStatePropertyAll(AppColors.defaultButtonColor),
+                        WidgetStatePropertyAll(AppColors.defaultButtonColor),
                   ),
                   onPressed: () async =>
                       await appInjector.get<LogoutCubit>().logout(),

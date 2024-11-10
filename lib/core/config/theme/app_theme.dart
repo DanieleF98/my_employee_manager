@@ -14,7 +14,7 @@ abstract class AppTheme {
     ),
     iconButtonTheme: IconButtonThemeData(
       style: ButtonStyle(
-        iconColor: MaterialStateProperty.all(
+        iconColor: WidgetStateProperty.all(
           AppColors.defaultBlack,
         ),
       ),

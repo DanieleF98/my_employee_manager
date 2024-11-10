@@ -36,18 +36,14 @@ class EmployeesMapper extends Mapper<List<EmployeeEntity>,
         phoneNumber: employeeModel.phoneNumber ?? 0,
         email: employeeModel.email ?? '',
         shifts: employeeModel.workShifts
-                ?.map(
-                  (shiftModel) => _mapWorkShiftEntity(
-                    shiftModel: shiftModel,
-                  ),
-                )
+                ?.map<WorkShiftEntity>(_mapWorkShiftEntity)
                 .toList() ??
-            <WorkShiftEntity>[],
+            [],
         employmentDate: employeeModel.employmentDate ?? 0,
         totalActiveNotifications: employeeModel.totalActiveNotifications ?? 0,
       );
 
-  WorkShiftEntity _mapWorkShiftEntity({required WorkShiftModel? shiftModel}) =>
+  WorkShiftEntity _mapWorkShiftEntity(WorkShiftModel? shiftModel) =>
       WorkShiftEntity(
         startTime:
             DateTime.fromMillisecondsSinceEpoch(shiftModel?.startTime ?? 0),
